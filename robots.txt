@@ -1,1 +1,1 @@
-User-agent: * Disallow: Sitemap: https://instabaines.github.io/al-folio/sitemap.xml
+User-agent: * Disallow: Sitemap: https://instabaines.github.io/sitemap.xml
