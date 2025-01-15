@@ -1,9 +1,14 @@
-"AJP":
-  url: https://aapt.scitation.org/journal/ajp
+"ASONAM":
+  url: https://asonam.cpsc.ucalgary.ca/
   color: "#00369f"
 
 "PhysRev":
   url: https://journals.aps.org/
 
-"Vision":
+"SNAM":
   color: "#009f36"
+  url: https://link.springer.com/journal/13278
+
+"Complex Network":
+  url: https://complexnetworks.org
+  color: "#00369f"
