@@ -1,152 +1,179 @@
 {
   "basics": {
-    "name": "Your Sidebar Name",
-    "email": "none@example.org",
-    "phone": "",
-    "website": "https://academicpages.github.io",
-    "summary": "Currently employed at Red Brick University. Short biography for the left-hand sidebar",
+    "name": "Ridwan Amure",
+    "label": "PhD Candidate | Machine Learning & Computational Social Science Researcher",
+    "picture": "",
+    "email": "amureridwan002@gmail.com",
+    "phone": "+1 (501) 442-2037",
+    "url": "https://linkedin.com/in/ridwan-amure",
+    "summary": "PhD candidate specializing in cross-platform narrative diffusion, machine learning, and computational social science. Experienced in ML engineering, NLP pipelines, and socio-technical behavior modeling.",
     "location": {
       "address": "",
       "postalCode": "",
-      "city": "Earth",
+      "city": "Little Rock",
       "countryCode": "US",
-      "region": ""
+      "region": "Arkansas"
     },
     "profiles": [
       {
-        "network": "Google Scholar",
-        "username": "",
-        "url": "https://scholar.google.com/citations?user=PS_CX0AAAAAJ"
-      },
-      {
-        "network": "ORCID",
-        "username": "",
-        "url": "https://orcid.org/yourorcidurl"
-      },
-      {
-        "network": "GitHub",
-        "username": "academicpages",
-        "url": "https://github.com/academicpages"
+        "network": "LinkedIn",
+        "username": "ridwan-amure",
+        "url": "https://linkedin.com/in/ridwan-amure"
       }
     ]
   },
-  "work": [],
+  "work": [
+    {
+      "company": "University of Arkansas at Little Rock",
+      "position": "Researcher",
+      "url": "https://ualr.edu",
+      "startDate": "2023-08-01",
+      "endDate": "",
+      "summary": "Lead research efforts on cyber behaviors through social media analysis, with focus on mechanisms and structures of cross-platform narrative diffusion.",
+      "highlights": [
+        "Led end-to-end research on cyber behaviors via social media analysis.",
+        "Studied mechanisms and entities involved in cross-platform narrative diffusion.",
+        "Developed multiplatform knowledge graph embeddings and ML models to extract insights."
+      ]
+    },
+    {
+      "company": "Meta",
+      "position": "Software Engineering Intern (Machine Learning)",
+      "url": "https://meta.com",
+      "startDate": "2025-05-01",
+      "endDate": "2025-08-01",
+      "summary": "Worked on ranking models and training pipelines to improve model deployment and retrieval performance.",
+      "highlights": [
+        "Built a training data pipeline reducing activity-to-serving time from 14 days to 1 day.",
+        "Implemented step-changes in model-based retrieval using feature ablation and new model architectures.",
+        "Implemented transformer-only interaction architecture for ranking models."
+      ]
+    },
+    {
+      "company": "IQuartic (A NewWave Company)",
+      "position": "Senior Machine Learning Engineer",
+      "url": "https://iquartic.com",
+      "startDate": "2023-01-01",
+      "endDate": "2023-08-01",
+      "summary": "Developed NLP and Bayesian modeling tools to improve medical risk adjustment and coding accuracy.",
+      "highlights": [
+        "Developed NLP pipelines for risk adjustment improving accuracy and efficiency.",
+        "Designed Bayesian models to detect suboptimal codings in medical records.",
+        "Managed end-to-end ML lifecycle from preprocessing to deployment.",
+        "Led engineering team to build a comprehensive risk adjustment platform."
+      ]
+    },
+    {
+      "company": "Parallelscore",
+      "position": "Data Science Engineer",
+      "url": "https://parallelscore.com",
+      "startDate": "2021-09-01",
+      "endDate": "2023-04-01",
+      "summary": "Designed scalable NLP systems using transformer architectures and developed production ML microservices.",
+      "highlights": [
+        "Implemented transformer-based NLP pipelines for NER and extraction.",
+        "Developed microservices for model serving using Docker, AWS, Jenkins, Kubernetes.",
+        "Supported end-to-end project development with strong documentation practices."
+      ]
+    },
+    {
+      "company": "Babban Gona",
+      "position": "Enterprise System Engineer (Machine Learning)",
+      "url": "https://babbangona.com",
+      "startDate": "2020-09-01",
+      "endDate": "2021-09-01",
+      "summary": "Built high-accuracy computer vision models for agricultural applications serving over 200,000 farmers.",
+      "highlights": [
+        "Developed low-latency, high-accuracy computer vision models for crop condition detection.",
+        "Researched and designed ML/AI applications for agricultural intelligence.",
+        "Maintained production CV models and supported field operations."
+      ]
+    }
+  ],
+  "volunteer": [],
   "education": [
     {
-      "institution": "GitHub University",
-      "area": "Ph.D in Version Control Theory",
-      "studyType": "",
+      "institution": "University of Arkansas at Little Rock",
+      "area": "Computer Science",
+      "studyType": "PhD",
       "startDate": "",
-      "endDate": "2018",
-      "gpa": null,
+      "endDate": "2026-12-01",
+      "gpa": "",
       "courses": []
     },
     {
-      "institution": "GitHub University",
-      "area": "M.S. in Jekyll",
-      "studyType": "",
+      "institution": "University of Arkansas at Little Rock",
+      "area": "Computer Science",
+      "studyType": "Master's",
       "startDate": "",
-      "endDate": "2014",
-      "gpa": null,
-      "courses": []
-    },
-    {
-      "institution": "GitHub University",
-      "area": "B.S. in GitHub",
-      "studyType": "",
-      "startDate": "",
-      "endDate": "2012",
-      "gpa": null,
+      "endDate": "2025-05-01",
+      "gpa": "",
       "courses": []
     }
   ],
-  "skills": [],
-  "languages": [],
-  "interests": [],
-  "references": [],
-  "publications": [
+  "awards": [],
+  "publications": [],
+  "skills": [
     {
-      "name": "Paper Title Number 1",
-      "publisher": "Journal 1",
-      "releaseDate": "2009-10-01",
-      "website": "https://academicpages.github.io/files/paper1.pdf",
-      "summary": "This paper is about the number 1. The number 2 is left for future work."
+      "name": "Machine Learning",
+      "level": "Expert",
+      "keywords": [
+        "Pytorch",
+        "Tensorflow",
+        "Bayesian Models",
+        "Transformers",
+        "Knowledge Graphs"
+      ]
     },
     {
-      "name": "Paper Title Number 2",
-      "publisher": "Journal 1",
-      "releaseDate": "2010-10-01",
-      "website": "https://academicpages.github.io/files/paper2.pdf",
-      "summary": "This paper is about the number 2. The number 3 is left for future work."
+      "name": "Data Science",
+      "level": "Expert",
+      "keywords": [
+        "Data Analysis",
+        "Statistics",
+        "Apache Spark",
+        "SQL",
+        "Pandas",
+        "NumPy"
+      ]
     },
     {
-      "name": "Paper Title Number 3",
-      "publisher": "Journal 1",
-      "releaseDate": "2015-10-01",
-      "website": "https://academicpages.github.io/files/paper3.pdf",
-      "summary": "This paper is about the number 3. The number 4 is left for future work."
+      "name": "Engineering & DevOps",
+      "level": "Advanced",
+      "keywords": [
+        "Docker",
+        "AWS (S3, EC2)",
+        "Kubernetes",
+        "Jenkins",
+        "Microservices"
+      ]
     },
     {
-      "name": "Paper Title Number 4",
-      "publisher": "GitHub Journal of Bugs",
-      "releaseDate": "2024-02-17",
-      "website": "https://academicpages.github.io/files/paper3.pdf",
-      "summary": "This paper is about fixing template issue #693."
+      "name": "Natural Language Processing",
+      "level": "Advanced",
+      "keywords": [
+        "NER",
+        "NLP Pipelines",
+        "Text Classification",
+        "Transformers"
+      ]
     }
   ],
-  "presentations": [
+  "languages": [
     {
-      "name": "Talk 1 on Relevant Topic in Your Field",
-      "event": "UC San Francisco, Department of Testing",
-      "date": "2012-03-01",
-      "location": "San Francisco, CA, USA",
-      "description": ""
-    },
-    {
-      "name": "Tutorial 1 on Relevant Topic in Your Field",
-      "event": "UC-Berkeley Institute for Testing Science",
-      "date": "2013-03-01",
-      "location": "Berkeley, CA, USA",
-      "description": ""
-    },
-    {
-      "name": "Talk 2 on Relevant Topic in Your Field",
-      "event": "London School of Testing",
-      "date": "2014-02-01",
-      "location": "London, UK",
-      "description": ""
-    },
-    {
-      "name": "Conference Proceeding talk 3 on Relevant Topic in Your Field",
-      "event": "Testing Institute of America 2014 Annual Conference",
-      "date": "2014-03-01",
-      "location": "Los Angeles, CA, USA",
-      "description": ""
+      "language": "English",
+      "fluency": "Professional"
     }
   ],
-  "teaching": [
+  "interests": [
     {
-      "course": "Teaching experience 1",
-      "institution": "University 1, Department",
-      "date": "2014-01-01",
-      "role": "Undergraduate course",
-      "description": ""
-    },
-    {
-      "course": "Teaching experience 2",
-      "institution": "University 1, Department",
-      "date": "2015-01-01",
-      "role": "Workshop",
-      "description": ""
+      "name": "Computational Social Science",
+      "keywords": [
+        "Narrative Diffusion",
+        "Cyber Behaviors",
+        "Influence Modeling"
+      ]
     }
   ],
-  "portfolio": [
-    {
-      "name": "Portfolio item number 1",
-      "category": "portfolio",
-      "date": "",
-      "url": "",
-      "description": "Short description of portfolio item number 1<br/><img src='/images/500x300.png'>"
-    }
-  ]
+  "references": []
 }
