@@ -5,5 +5,6 @@ permalink: /publication/2024-01-01-Navigating-the-anomalies-A-comprehensive-anal
 date: 2024-01-01
 venue: 'In the proceedings of International Conference on Advances in Social Networks Analysis and Mining'
 citation: ' Shadi Shajari,  Ridwan Amure,  Nitin Agarwal, &quot;Navigating the anomalies: A comprehensive analysis of youtube channel behavior.&quot; In the proceedings of International Conference on Advances in Social Networks Analysis and Mining, 2024.'
+paperurl: 'https://doi.org/chapter/10.1007/978-3-031-85240-4_8'
 ---
 Use [Google Scholar](https://scholar.google.com/scholar?q=Navigating+the+anomalies:+A+comprehensive+analysis+of+youtube+channel+behavior){:target="_blank"} for full citation
