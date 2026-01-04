@@ -1,6 +1,7 @@
 ---
 title: "Memory-driven modeling of herpes simplex virus type-1 and type-2 dynamics with neural network optimization"
 collection: publications
+category: manuscripts
 permalink: /publication/2025-01-01-Memory-driven-modeling-of-herpes-simplex-virus-type-1-and-type-2-dynamics-with-neural-network-optimization
 date: 2025-01-01
 venue: 'Computer Methods and Programs in Biomedicine'

@@ -1,6 +1,7 @@
 ---
 title: "Navigating the anomalies: A comprehensive analysis of youtube channel behavior"
 collection: publications
+category: conferences
 permalink: /publication/2024-01-01-Navigating-the-anomalies-A-comprehensive-analysis-of-youtube-channel-behavior
 date: 2024-01-01
 venue: 'In the proceedings of International Conference on Advances in Social Networks Analysis and Mining'

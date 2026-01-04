@@ -1,6 +1,7 @@
 ---
 title: "Modeling Word-Level Functions in Social Movement Discourse"
 collection: publications
+category: conferences
 permalink: /publication/2025-01-01-Modeling-Word-Level-Functions-in-Social-Movement-Discourse
 date: 2025-01-01
 venue: 'In the proceedings of International Conference on Information Systems (ICIS) 2025'

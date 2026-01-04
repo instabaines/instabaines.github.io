@@ -1,6 +1,7 @@
 ---
 title: "A comparative evaluation of social network analysis tools: performance and community engagement perspectives"
 collection: publications
+category: manuscripts
 permalink: /publication/2025-01-01-A-comparative-evaluation-of-social-network-analysis-tools-performance-and-community-engagement-perspectives
 date: 2025-01-01
 venue: 'Social Network Analysis and Mining'

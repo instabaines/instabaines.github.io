@@ -1,6 +1,7 @@
 ---
 title: "Modeling cross-platform narrative templates: a temporal knowledge graph approach"
 collection: publications
+category: manuscripts
 permalink: /publication/2025-01-01-Modeling-cross-platform-narrative-templates-a-temporal-knowledge-graph-approach
 date: 2025-01-01
 venue: 'Social Network Analysis and Mining'

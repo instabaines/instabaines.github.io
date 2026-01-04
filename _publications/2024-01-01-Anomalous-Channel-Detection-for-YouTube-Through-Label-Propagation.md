@@ -1,6 +1,7 @@
 ---
 title: "Anomalous Channel Detection for YouTube Through Label Propagation"
 collection: publications
+category: conferences
 permalink: /publication/2024-01-01-Anomalous-Channel-Detection-for-YouTube-Through-Label-Propagation
 date: 2024-01-01
 venue: 'In the proceedings of International Conference on Complex Networks and Their Applications'

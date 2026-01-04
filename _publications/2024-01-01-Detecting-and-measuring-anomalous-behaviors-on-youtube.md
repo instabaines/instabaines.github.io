@@ -1,6 +1,7 @@
 ---
 title: "Detecting and measuring anomalous behaviors on youtube"
 collection: publications
+category: conferences
 permalink: /publication/2024-01-01-Detecting-and-measuring-anomalous-behaviors-on-youtube
 date: 2024-01-01
 venue: 'In the proceedings of International Conference on Advances in Social Networks Analysis and Mining'

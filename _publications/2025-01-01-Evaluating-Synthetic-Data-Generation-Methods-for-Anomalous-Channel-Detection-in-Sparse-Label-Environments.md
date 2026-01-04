@@ -1,6 +1,7 @@
 ---
 title: "Evaluating Synthetic Data Generation Methods for Anomalous Channel Detection in Sparse-Label Environments"
 collection: publications
+category: conferences
 permalink: /publication/2025-01-01-Evaluating-Synthetic-Data-Generation-Methods-for-Anomalous-Channel-Detection-in-Sparse-Label-Environments
 date: 2025-01-01
 venue: 'In the proceedings of In Proceedings of the 16th International Conference on Social Computing, Behavioral-Cultural Modeling &amp; Prediction and Behavior Representation in Modeling and Simulation (SBP-BRiMS 2025)'

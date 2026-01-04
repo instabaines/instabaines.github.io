@@ -1,6 +1,7 @@
 ---
 title: "Exposure, skepticism, and switching: a behavioral model of narrative diffusion"
 collection: publications
+category: conferences
 permalink: /publication/2026-01-01-Exposure-skepticism-and-switching-a-behavioral-model-of-narrative-diffusion
 date: 2026-01-01
 venue: 'In the proceedings of Proceedings of the 59th Hawaii International Conference on System Sciences'

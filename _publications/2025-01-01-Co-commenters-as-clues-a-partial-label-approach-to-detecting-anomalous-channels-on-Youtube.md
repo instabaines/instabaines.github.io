@@ -1,6 +1,7 @@
 ---
 title: "Co-commenters as clues: a partial-label approach to detecting anomalous channels on Youtube"
 collection: publications
+category: manuscripts
 permalink: /publication/2025-01-01-Co-commenters-as-clues-a-partial-label-approach-to-detecting-anomalous-channels-on-Youtube
 date: 2025-01-01
 venue: 'Social Network Analysis and Mining'

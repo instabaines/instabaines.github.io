@@ -1,6 +1,7 @@
 ---
 title: "Toward Improved Clustering for Textual Data"
 collection: publications
+category: conferences
 permalink: /publication/2023-01-01-Toward-Improved-Clustering-for-Textual-Data
 date: 2023-01-01
 venue: 'In the proceedings of International Conference on Computing and Communication Networks'

@@ -1,6 +1,7 @@
 ---
 title: "KG-CFSA: a comprehensive approach for analyzing multi-source heterogeneous social network knowledge graph"
 collection: publications
+category: manuscripts
 permalink: /publication/2024-01-01-KG-CFSA-a-comprehensive-approach-for-analyzing-multi-source-heterogeneous-social-network-knowledge-graph
 date: 2024-01-01
 venue: 'Social Network Analysis and Mining'

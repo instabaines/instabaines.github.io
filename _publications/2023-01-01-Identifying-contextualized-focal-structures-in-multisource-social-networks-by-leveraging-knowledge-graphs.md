@@ -1,7 +1,7 @@
 ---
 title: "Identifying contextualized focal structures in multisource social networks by leveraging knowledge graphs"
 collection: publications
-category: manuscripts
+category: conferences
 permalink: /publication/2023-01-01-Identifying-contextualized-focal-structures-in-multisource-social-networks-by-leveraging-knowledge-graphs
 date: 2023-01-01
 venue: 'In the proceedings of International conference on complex networks and their applications'

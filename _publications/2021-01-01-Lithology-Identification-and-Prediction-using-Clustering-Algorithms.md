@@ -1,6 +1,7 @@
 ---
 title: "Lithology Identification and Prediction using Clustering Algorithms"
 collection: publications
+category: conferences
 permalink: /publication/2021-01-01-Lithology-Identification-and-Prediction-using-Clustering-Algorithms
 date: 2021-01-01
 venue: 'In the proceedings of NAPE Bulletin'

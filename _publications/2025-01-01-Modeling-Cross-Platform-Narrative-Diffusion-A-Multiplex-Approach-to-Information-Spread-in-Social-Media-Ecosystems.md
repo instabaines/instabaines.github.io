@@ -1,6 +1,7 @@
 ---
 title: "Modeling Cross-Platform Narrative Diffusion: A Multiplex Approach to Information Spread in Social Media Ecosystems"
 collection: publications
+category: conferences
 permalink: /publication/2025-01-01-Modeling-Cross-Platform-Narrative-Diffusion-A-Multiplex-Approach-to-Information-Spread-in-Social-Media-Ecosystems
 date: 2025-01-01
 venue: 'In the proceedings of Proceedings of the 17th International Conference on Advances in Social Networks Analysis and Mining (ASONAM 2025)'
