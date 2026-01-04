@@ -18,19 +18,11 @@ LinkedIn: https://linkedin.com/in/ridwan-amure
 
 ---
 
-## Summary
-
-PhD candidate specializing in cross-platform narrative diffusion, machine learning, and computational social science. Experienced in ML engineering, NLP pipelines, and socio-technical behavior modeling.
-
----
-
 ## Work Experience
 
-### University of Arkansas at Little Rock  
+### COMSOS Research Center, University of Arkansas at Little Rock  
 **Researcher**  
 *Aug 2023 – Present*  
-https://ualr.edu  
-
 - Lead research on cyber behaviors through large-scale social media analysis.  
 - Study mechanisms and entities involved in cross-platform narrative diffusion.  
 - Develop multiplatform knowledge graph embeddings and machine learning models to extract behavioral insights.
@@ -40,7 +32,7 @@ https://ualr.edu
 ### Meta  
 **Software Engineering Intern (Machine Learning)**  
 *May 2025 – Aug 2025*  
-https://meta.com  
+ 
 
 - Built a training data pipeline reducing activity-to-serving latency from 14 days to 1 day.  
 - Implemented step-changes in model-based retrieval via feature ablation and new architectures.  
@@ -51,7 +43,6 @@ https://meta.com
 ### IQuartic (A NewWave Company)  
 **Senior Machine Learning Engineer**  
 *Jan 2023 – Aug 2023*  
-https://iquartic.com  
 
 - Developed NLP pipelines for medical risk adjustment, improving coding accuracy and efficiency.  
 - Designed Bayesian models to detect suboptimal medical codings.  
@@ -62,8 +53,7 @@ https://iquartic.com
 
 ### Parallelscore  
 **Data Science Engineer**  
-*Sep 2021 – Apr 2023*  
-https://parallelscore.com  
+*Sep 2021 – Apr 2023*   
 
 - Implemented transformer-based NLP pipelines for NER and information extraction.  
 - Developed production ML microservices using Docker, AWS, Jenkins, and Kubernetes.  
@@ -74,7 +64,6 @@ https://parallelscore.com
 ### Babban Gona  
 **Enterprise System Engineer (Machine Learning)**  
 *Sep 2020 – Sep 2021*  
-https://babbangona.com  
 
 - Built low-latency, high-accuracy computer vision models for crop condition detection.  
 - Designed ML/AI applications for agricultural intelligence serving over 200,000 farmers.  
@@ -96,14 +85,14 @@ https://babbangona.com
 
 ## Skills
 
-### Machine Learning (Expert)
+### Machine Learning
 - PyTorch  
 - TensorFlow  
 - Bayesian Models  
 - Transformers  
 - Knowledge Graphs  
 
-### Data Science (Expert)
+### Data Science 
 - Data Analysis  
 - Statistics  
 - Apache Spark  
@@ -111,14 +100,14 @@ https://babbangona.com
 - Pandas  
 - NumPy  
 
-### Engineering & DevOps (Advanced)
+### Engineering & DevOps 
 - Docker  
 - AWS (S3, EC2)  
 - Kubernetes  
 - Jenkins  
 - Microservices  
 
-### Natural Language Processing (Advanced)
+### Natural Language Processing
 - Named Entity Recognition (NER)  
 - NLP Pipelines  
 - Text Classification  
@@ -151,12 +140,10 @@ Talks
     {% include archive-single-talk-cv.html  %}
   {% endfor %}</ul>
   
-Teaching
+<!-- Teaching
 ======
   <ul>{% for post in site.teaching reversed %}
     {% include archive-single-cv.html %}
   {% endfor %}</ul>
   
-Service and leadership
-======
-* Currently signed in to 43 different slack teams
+ -->
