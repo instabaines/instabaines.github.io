@@ -1,0 +1,111 @@
+{
+  "profile": {
+    "location": "Little Rock, Arkansas, United States",
+    "email": "amureridwan002@gmail.com",
+    "linkedin": "https://linkedin.com/in/ridwan-amure"
+  },
+  "education": [
+    {
+      "school": "University of Arkansas at Little Rock",
+      "detail": "PhD in Computer Science - Expected December 2026"
+    },
+    {
+      "school": "University of Arkansas at Little Rock",
+      "detail": "Master's in Computer Science - May 2025"
+    }
+  ],
+  "experience": [
+    {
+      "company": "COSMOS Research Center, University of Arkansas at Little Rock",
+      "rolePeriod": "Researcher - August 2023 to present",
+      "bullets": [
+        "Lead research on cyber behaviors through large-scale social media analysis.",
+        "Study mechanisms and entities involved in cross-platform narrative diffusion.",
+        "Develop multiplatform knowledge graph embeddings and machine learning models to extract behavioral insights."
+      ]
+    },
+    {
+      "company": "Meta",
+      "rolePeriod": "Software Engineering Intern, Machine Learning - May 2025 to August 2025",
+      "bullets": [
+        "Built a training data pipeline reducing activity-to-serving latency from 14 days to 1 day.",
+        "Implemented step-changes in model-based retrieval via feature ablation and new architectures.",
+        "Designed and deployed transformer-only interaction architectures for ranking models."
+      ]
+    },
+    {
+      "company": "IQuartic (A NewWave Company)",
+      "rolePeriod": "Senior Machine Learning Engineer - January 2023 to August 2023",
+      "bullets": [
+        "Developed NLP pipelines for medical risk adjustment, improving coding accuracy and efficiency.",
+        "Designed Bayesian models to detect suboptimal medical codings.",
+        "Managed the full ML lifecycle from preprocessing to deployment.",
+        "Led an engineering team building an end-to-end risk adjustment platform."
+      ]
+    },
+    {
+      "company": "Parallelscore",
+      "rolePeriod": "Data Science Engineer - September 2021 to April 2023",
+      "bullets": [
+        "Implemented transformer-based NLP pipelines for named entity recognition and information extraction.",
+        "Developed production ML microservices using Docker, AWS, Jenkins, and Kubernetes.",
+        "Supported end-to-end project delivery with strong documentation and engineering practices."
+      ]
+    },
+    {
+      "company": "Babban Gona",
+      "rolePeriod": "Enterprise System Engineer, Machine Learning - September 2020 to September 2021",
+      "bullets": [
+        "Built low-latency, high-accuracy computer vision models for crop condition detection.",
+        "Designed ML and AI applications for agricultural intelligence serving more than 200,000 farmers.",
+        "Maintained production computer vision systems and supported field deployment."
+      ]
+    }
+  ],
+  "skills": [
+    "Machine learning: PyTorch, TensorFlow, Bayesian models, transformers, knowledge graphs",
+    "Data science: statistics, Spark, SQL, Pandas, NumPy",
+    "Engineering and DevOps: Docker, AWS, Kubernetes, Jenkins, microservices",
+    "NLP: named entity recognition, text classification, information extraction pipelines"
+  ],
+  "interests": [
+    "Computational social science",
+    "Narrative diffusion",
+    "Cyber behaviors",
+    "Influence modeling"
+  ],
+  "researchThemes": [
+    "Computational social science",
+    "Graph mining",
+    "Narrative diffusion",
+    "YouTube behavior analysis",
+    "Knowledge graphs",
+    "Representation learning"
+  ],
+  "tools": [
+    {
+      "kicker": "Graph mining",
+      "title": "submine",
+      "summary": "A research-grade library for frequent subgraph mining with a unified interface over multiple mining backends and graph formats.",
+      "actions": [
+        { "label": "View docs", "url": "submine.html", "primary": true },
+        { "label": "Open on GitHub", "url": "https://github.com/instabaines/submine", "primary": false }
+      ],
+      "links": [
+        { "label": "Repository", "url": "https://github.com/instabaines/submine" }
+      ]
+    },
+    {
+      "kicker": "Network analysis",
+      "title": "Temporal Eigenvector Centrality",
+      "summary": "A C++ implementation with Python bindings for centrality analysis on temporal and multiplex networks.",
+      "actions": [
+        { "label": "View docs", "url": "temporal-eigenvector-centrality.html", "primary": true },
+        { "label": "Open on GitHub", "url": "https://github.com/instabaines/temporal_eigen_vector_centrality", "primary": false }
+      ],
+      "links": [
+        { "label": "Repository", "url": "https://github.com/instabaines/temporal_eigen_vector_centrality" }
+      ]
+    }
+  ]
+}

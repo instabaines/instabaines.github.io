@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Temporal Eigenvector Centrality | Ridwan Amure</title>
+    <meta
+      name="description"
+      content="Overview and usage notes for temporal eigenvector centrality on temporal and multiplex networks."
+    />
+    <link rel="icon" href="images/favicon-32x32.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/site.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="site-header">
+        <a class="brand" href="index.html">Ridwan Amure</a>
+        <nav class="site-nav" aria-label="Primary">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="cv.html">CV</a>
+          <a href="research.html">Research</a>
+          <a href="talks.html">Talks</a>
+          <a class="is-active" href="tools.html">Tools</a>
+        </nav>
+      </header>
+
+      <main>
+        <section class="page-hero">
+          <p class="eyebrow">Tool</p>
+          <h1>Temporal Eigenvector Centrality</h1>
+          <p class="lead">
+            A high-performance C++ implementation with Python bindings for temporal and multiplex network
+            centrality analysis.
+          </p>
+          <div class="action-row">
+            <a class="button button-primary" href="https://github.com/instabaines/temporal_eigen_vector_centrality" target="_blank" rel="noreferrer">Open on GitHub</a>
+          </div>
+        </section>
+
+        <section class="section-grid">
+          <article class="panel">
+            <h2>What It Does</h2>
+            <p>
+              This project reimplements multilayer and temporal centrality methods in C++ and exposes them
+              through Python bindings, making it easier to analyze larger temporal networks than a typical
+              MATLAB workflow can handle comfortably.
+            </p>
+            <ul class="feature-list compact-list">
+              <li>C++14 implementation designed for sparse temporal network computations</li>
+              <li>Python wrapper for integration with data science workflows</li>
+              <li>Joint centrality, time-averaged centrality, and first-order mover scores</li>
+              <li>Support for giant component reduction on temporal graphs</li>
+            </ul>
+          </article>
+
+          <article class="panel accent-panel">
+            <h2>Input Format</h2>
+            <p>The edge list input is expected as a space-separated file with four columns:</p>
+            <pre><code>source_node_id  target_node_id  weight  timestamp</code></pre>
+            <p>
+              Node IDs can be 0-based or 1-based. Timestamps are integer values such as years or ordered
+              time steps.
+            </p>
+          </article>
+        </section>
+
+        <section class="panel">
+          <h2>Build And Install</h2>
+          <pre><code>mkdir build
+cd build
+cmake ..
+make -j4</code></pre>
+          <p>On Windows PowerShell:</p>
+          <pre><code>mkdir build
+cd build
+cmake .. -DCMAKE_POLICY_VERSION_MINIMUM='3.5'
+cmake --build .</code></pre>
+        </section>
+
+        <section class="section-grid">
+          <article class="panel">
+            <h2>Python Usage</h2>
+            <pre><code>import temporal_centrality as tc
+
+net = tc.TemporalNetwork()
+net.load_edge_list("path/to/edges.txt")
+net.reduce_to_giant_component()
+
+results = net.compute_joint_centrality(
+    omegas=[1.0, 10.0, 100.0],
+    type="authority"
+)</code></pre>
+          </article>
+
+          <article class="panel">
+            <h2>Use Cases</h2>
+            <ul class="feature-list compact-list">
+              <li>Ranking entities in temporal interaction networks</li>
+              <li>Studying multiplex and longitudinal network structure</li>
+              <li>Combining performant C++ numerics with Python analysis workflows</li>
+            </ul>
+          </article>
+        </section>
+
+        <section class="panel">
+          <h2>More Information</h2>
+          <div class="card-actions">
+            <a class="button button-secondary" href="https://github.com/instabaines/temporal_eigen_vector_centrality" target="_blank" rel="noreferrer">Repository</a>
+            <a class="button button-secondary" href="tools.html">Back to tools</a>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer"></footer>
+    </div>
+  </body>
+</html>

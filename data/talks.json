@@ -1,0 +1,107 @@
+[
+  {
+    "slug": "agent-nsbe-2026",
+    "title": "Agents at Work –Accelerating and Innovating Business Processes with AI Agents",
+    "date": "2026-03-20",
+    "venue": "NSBE 2026",
+    "location": "Baltimore, Maryland",
+    "summary": "Levergaing Agents and Agentic AI for improved business processes",
+    "memories": [
+      "Great conversation with practitioners about evaluation, latency, and deployment tradeoffs.",
+      "Strong audience interest in AI affect future of work",
+      "The best questions focused on how to build Agents, Governance, Reducing Hallucination"
+    ],
+    "links": [
+      { "label": "Slides", "url": "files/Agents at Work – Accelerating and Innovating Business Processes with AI Agents.pdf" },
+      { "label": "Related paper", "url": "research.html" },
+      { "label": "Talk map entry", "url": "talkmap/map.html" }
+    ],
+    "assets": {
+      "heroImage":  "assets/talks/rag-systems-nsbe-2025/hero.png",
+      "gallery": [
+        "assets/talks/rag-systems-nsbe-2025/img1.jpg",
+        "assets/talks/rag-systems-nsbe-2025/img2.png",
+        "assets/talks/rag-systems-nsbe-2025/img3.png"
+      ]
+    },
+    "tags": ["Agent", "Agentic AI","LLMs", "Production AI", "Applied ML"]
+  },
+  {
+    "slug": "rag-systems-nsbe-2025",
+    "title": "Building and Deploying Retrieval-Augmented Generation (RAG) Systems for Quality Business Impact",
+    "date": "2025-03-07",
+    "venue": "NSBE 2025",
+    "location": "Chicago, Illinois",
+    "summary": "Practical considerations for taking RAG systems from concept to measurable business impact.",
+    "memories": [
+      "Great conversation with practitioners about evaluation, latency, and deployment tradeoffs.",
+      "Strong audience interest in how retrieval quality changes downstream user trust.",
+      "The best questions focused on how to turn RAG from a demo into a production system with measurable impact."
+    ],
+    "links": [
+      { "label": "Slides", "url": "files/Building and Deploying Retrieval-Augmented Generation (RAG) Systems for Quality Business Impact.pdf" },
+      { "label": "Related paper", "url": "research.html" },
+      { "label": "Talk map entry", "url": "talkmap/map.html" }
+    ],
+    "assets": {
+      "heroImage":  "assets/talks/rag-systems-nsbe-2025/img1.png",
+      "gallery": [
+        "assets/talks/rag-systems-nsbe-2025/img4.jpg",
+       
+        "assets/talks/rag-systems-nsbe-2025/img3.png"
+      ]
+    },
+    "tags": ["RAG", "LLMs", "Production AI", "Applied ML"]
+  },
+  {
+    "slug": "scientific-modelling-workshop-2021",
+    "title": "Scientific Modelling Workshop",
+    "date": "2021-11-27",
+    "venue": "EAGE NGYP",
+    "location": "",
+    "summary": "Workshop-oriented session centered on scientific and computational modeling practice.",
+    "memories": [
+      "Focused on practical modeling intuition and how to connect equations, computation, and domain questions."
+    ],
+    "links": [],
+    "assets": {
+      "heroImage": "",
+      "gallery": []
+    },
+    "tags": ["Workshop", "Modeling", "Computation"]
+  },
+  {
+    "slug": "data-science-ml-for-engineers-2021",
+    "title": "Data Science and Machine Learning for Engineers",
+    "date": "2021-11-07",
+    "venue": "SPE NGYP",
+    "location": "",
+    "summary": "Applied data science and machine learning concepts tailored for engineering audiences.",
+    "memories": [
+      "Explained machine learning from an engineering systems perspective rather than only a theory-first view."
+    ],
+    "links": [],
+    "assets": {
+      "heroImage": "",
+      "gallery": []
+    },
+    "tags": ["Data Science", "Machine Learning", "Engineering"]
+  },
+  {
+    "slug": "python-virtual-classroom-2020",
+    "title": "Python Virtual Classroom",
+    "date": "2020-08-07",
+    "venue": "EAGE NGYP",
+    "location": "",
+    "summary": "Python-focused teaching session supporting technical upskilling and practical programming.",
+    "memories": [
+      "Built around accessibility for learners who wanted to move from theory into hands-on scripting."
+    ],
+    "links": [],
+    "assets": {
+      "heroImage": "",
+      "gallery": []
+    },
+    "tags": ["Python", "Teaching", "Workshop"]
+  }
+]
