@@ -91,6 +91,11 @@
       "kicker": "Graph mining",
       "title": "submine",
       "summary": "A research-grade library for frequent subgraph mining with a unified interface over multiple mining backends and graph formats.",
+      "highlights": [
+        "Unified API across multiple mining backends",
+        "Supports common graph mining formats",
+        "Designed for reproducible research workflows"
+      ],
       "actions": [
         { "label": "View docs", "url": "submine.html", "primary": true },
         { "label": "Open on GitHub", "url": "https://github.com/instabaines/submine", "primary": false }
@@ -103,6 +108,11 @@
       "kicker": "Network analysis",
       "title": "Temporal Eigenvector Centrality",
       "summary": "A C++ implementation with Python bindings for centrality analysis on temporal and multiplex networks.",
+      "highlights": [
+        "C++ performance with Python workflow support",
+        "Temporal and multiplex network centrality",
+        "Built for larger sparse network analysis"
+      ],
       "actions": [
         { "label": "View docs", "url": "temporal-eigenvector-centrality.html", "primary": true },
         { "label": "Open on GitHub", "url": "https://github.com/instabaines/temporal_eigen_vector_centrality", "primary": false }

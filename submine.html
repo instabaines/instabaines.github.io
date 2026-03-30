@@ -27,6 +27,7 @@
           <a href="cv.html">CV</a>
           <a href="research.html">Research</a>
           <a href="talks.html">Talks</a>
+          <a href="writing.html">Writing</a>
           <a class="is-active" href="tools.html">Tools</a>
         </nav>
       </header>
@@ -44,11 +45,24 @@
           </div>
         </section>
 
+        <section class="card-grid">
+          <article class="content-card">
+            <p class="card-kicker">Best for</p>
+            <h3>Frequent Subgraph Mining Workflows</h3>
+            <p>Use `submine` when you want one consistent interface over multiple graph mining backends.</p>
+          </article>
+          <article class="content-card">
+            <p class="card-kicker">Stack</p>
+            <h3>Python + Mining Backends</h3>
+            <p>Built for Python-first workflows while handling the backend-specific friction for you.</p>
+          </article>
+        </section>
+
         <section class="section-grid">
           <article class="panel">
             <h2>What It Does</h2>
             <p>
-              `submine` helps users focus on what to mine instead of manually adapting graph data for each
+              <code>submine</code> helps users focus on what to mine instead of manually adapting graph data for each
               mining backend. It validates inputs, detects supported graph formats, and routes execution
               through a unified Python API.
             </p>
@@ -98,6 +112,35 @@ results = mine_subgraphs(
               <li>Prototype graph mining workflows without rewriting formats by hand</li>
             </ul>
           </article>
+        </section>
+
+        <section class="panel">
+          <h2>Why It Helps</h2>
+          <ul class="feature-list compact-list">
+            <li>Reduces repetitive data conversion work</li>
+            <li>Keeps graph-mining experiments easier to compare and reproduce</li>
+            <li>Makes it simpler to move from small tests to broader mining studies</li>
+          </ul>
+        </section>
+
+        <section class="feature-editorial-card">
+          <div class="feature-editorial-copy">
+            <p class="eyebrow">Further Reading</p>
+            <h2>Why Subgraph Mining Matters</h2>
+            <p class="lead">
+              I wrote a companion article on why subgraph mining matters and how it shifts attention from
+              isolated nodes to recurring structural patterns in complex networks.
+            </p>
+            <p class="feature-editorial-meta">Substack essay by Ridwan Amure</p>
+            <div class="card-actions">
+              <a class="button button-primary" href="https://open.substack.com/pub/ridwanamure/p/why-subgraph-mining-matters?r=18lad4&utm_campaign=post&utm_medium=web&showWelcomeOnShare=true" target="_blank" rel="noreferrer">Read the article</a>
+            </div>
+          </div>
+          <aside class="feature-editorial-quote">
+            <p>
+              “Subgraph mining helps reveal the recurring structures that shape how complex systems actually behave.”
+            </p>
+          </aside>
         </section>
 
         <section class="panel">

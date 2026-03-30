@@ -1,7 +1,13 @@
 (function () {
   let data = null;
   let talks = [];
+  let writing = { platforms: [], featured: [] };
   let publicationSortKey = "date";
+  let publicationFilters = {
+    year: "",
+    type: "",
+    search: ""
+  };
 
   if (!data) {
     data = {};
@@ -72,7 +78,9 @@
     const target = document.querySelector("[data-render='publications']");
     if (!target) return;
 
-    target.innerHTML = sortPublications(data.publications || [])
+    const filteredPublications = sortPublications(filterPublications(data.publications || []));
+
+    target.innerHTML = filteredPublications
       .map(
         (item) => `
           <article class="publication-item">
@@ -87,6 +95,17 @@
         `
       )
       .join("");
+
+    if (!filteredPublications.length) {
+      target.innerHTML = `
+        <article class="publication-item">
+          <h2>No matching publications</h2>
+          <p>Try adjusting the filters or search text to broaden the result set.</p>
+        </article>
+      `;
+    }
+
+    renderPublicationResults(filteredPublications.length, (data.publications || []).length);
   }
 
   function splitBibEntries(text) {
@@ -287,6 +306,19 @@
     return String(a || "").localeCompare(String(b || ""), undefined, { sensitivity: "base" });
   }
 
+  function filterPublications(items) {
+    return items.filter((item) => {
+      const matchesYear = !publicationFilters.year || String(item.year || "") === publicationFilters.year;
+      const matchesType = !publicationFilters.type || item.typeLabel === publicationFilters.type;
+      const haystack = [item.title, item.venueName, item.publisher, item.summary]
+        .join(" ")
+        .toLowerCase();
+      const matchesSearch = !publicationFilters.search || haystack.includes(publicationFilters.search.toLowerCase());
+
+      return matchesYear && matchesType && matchesSearch;
+    });
+  }
+
   function sortPublications(items) {
     return [...items].sort((a, b) => {
       if (publicationSortKey === "type") {
@@ -330,6 +362,27 @@
       .map((item) => item);
   }
 
+  function renderPublicationResults(count, total) {
+    const target = document.querySelector("[data-publication-results]");
+    if (!target) return;
+    target.textContent = `${count} of ${total} publication${total === 1 ? "" : "s"} shown`;
+  }
+
+  function populatePublicationFilterControls() {
+    const yearControl = document.querySelector("[data-publication-year-filter]");
+    const typeControl = document.querySelector("[data-publication-type-filter]");
+    if (!yearControl || !typeControl) return;
+
+    const years = [...new Set((data.publications || []).map((item) => item.year).filter(Boolean))].sort((a, b) => b - a);
+    const types = [...new Set((data.publications || []).map((item) => item.typeLabel).filter(Boolean))].sort(compareText);
+
+    yearControl.innerHTML = `<option value="">All years</option>${years.map((year) => `<option value="${escapeHtml(String(year))}">${escapeHtml(String(year))}</option>`).join("")}`;
+    typeControl.innerHTML = `<option value="">All types</option>${types.map((type) => `<option value="${escapeHtml(type)}">${escapeHtml(type)}</option>`).join("")}`;
+
+    yearControl.value = publicationFilters.year;
+    typeControl.value = publicationFilters.type;
+  }
+
   function bindPublicationSortControl() {
     const control = document.querySelector("[data-publication-sort]");
     if (!control) return;
@@ -339,6 +392,45 @@
       publicationSortKey = event.target.value || "date";
       renderPublications();
     });
+  }
+
+  function bindPublicationFilterControls() {
+    const yearControl = document.querySelector("[data-publication-year-filter]");
+    const typeControl = document.querySelector("[data-publication-type-filter]");
+    const searchControl = document.querySelector("[data-publication-search]");
+    const clearButton = document.querySelector("[data-publication-clear]");
+
+    if (yearControl) {
+      yearControl.addEventListener("change", (event) => {
+        publicationFilters.year = event.target.value || "";
+        renderPublications();
+      });
+    }
+
+    if (typeControl) {
+      typeControl.addEventListener("change", (event) => {
+        publicationFilters.type = event.target.value || "";
+        renderPublications();
+      });
+    }
+
+    if (searchControl) {
+      searchControl.value = publicationFilters.search;
+      searchControl.addEventListener("input", (event) => {
+        publicationFilters.search = (event.target.value || "").trim();
+        renderPublications();
+      });
+    }
+
+    if (clearButton) {
+      clearButton.addEventListener("click", () => {
+        publicationFilters = { year: "", type: "", search: "" };
+        if (yearControl) yearControl.value = "";
+        if (typeControl) typeControl.value = "";
+        if (searchControl) searchControl.value = "";
+        renderPublications();
+      });
+    }
   }
 
   async function loadBibPublications() {
@@ -403,6 +495,26 @@
     }
   }
 
+  async function loadWritingData() {
+    try {
+      const response = await fetch("data/writing.json", { cache: "no-cache" });
+      if (!response.ok) {
+        throw new Error(`Unable to load writing data: ${response.status}`);
+      }
+
+      const payload = await response.json();
+      if (payload && typeof payload === "object") {
+        writing = {
+          platforms: Array.isArray(payload.platforms) ? payload.platforms : [],
+          featured: Array.isArray(payload.featured) ? payload.featured : []
+        };
+      }
+    } catch (error) {
+      console.warn("Unable to load writing data.", error);
+      writing = { platforms: [], featured: [] };
+    }
+  }
+
   function formatTalkDate(value) {
     if (!value) return "";
     const date = new Date(`${value}T00:00:00`);
@@ -439,7 +551,8 @@
     const target = document.querySelector("[data-render='talks']");
     if (!target) return;
 
-    target.innerHTML = talks
+    target.innerHTML = [...talks]
+      .sort((a, b) => (b.date || "").localeCompare(a.date || ""))
       .map(
         (item) => `
           <article class="timeline-item talk-card">
@@ -452,6 +565,27 @@
             </div>
             <a href="talk-detail.html?slug=${encodeURIComponent(item.slug)}">Explore talk details</a>
           </article>
+        `
+      )
+      .join("");
+  }
+
+  function linkTone(label) {
+    const value = String(label || "").toLowerCase();
+    if (value.includes("slide")) return "resource-slides";
+    if (value.includes("code") || value.includes("repo") || value.includes("github")) return "resource-code";
+    if (value.includes("paper") || value.includes("article")) return "resource-paper";
+    return "resource-general";
+  }
+
+  function renderResourceCards(links) {
+    return links
+      .map(
+        (link) => `
+          <a class="resource-card ${linkTone(link.label)}" href="${escapeHtml(link.url)}" target="_blank" rel="noreferrer">
+            <span class="resource-label">${escapeHtml(link.label)}</span>
+            <span class="resource-hint">Open resource</span>
+          </a>
         `
       )
       .join("");
@@ -497,8 +631,8 @@
 
     const links = talk.links && talk.links.length
       ? `
-        <div class="card-actions">
-          ${talk.links.map((link) => `<a class="button button-secondary" href="${escapeHtml(link.url)}" target="_blank" rel="noreferrer">${escapeHtml(link.label)}</a>`).join("")}
+        <div class="resource-grid">
+          ${renderResourceCards(talk.links)}
         </div>
       `
       : "<p>No external resources are listed for this talk.</p>";
@@ -510,6 +644,23 @@
     const tags = talk.tags && talk.tags.length
       ? `<div class="tag-row">${talk.tags.map((tag) => `<span>${escapeHtml(tag)}</span>`).join("")}</div>`
       : "<p>No tags are listed for this talk.</p>";
+
+    const snapshot = `
+      <div class="talk-snapshot-grid">
+        <div class="snapshot-card">
+          <span class="stat-label">Venue</span>
+          <p class="stat-value">${escapeHtml(talk.venue || "TBD")}</p>
+        </div>
+        <div class="snapshot-card">
+          <span class="stat-label">Location</span>
+          <p class="stat-value">${escapeHtml(talk.location || "Virtual / Unlisted")}</p>
+        </div>
+        <div class="snapshot-card">
+          <span class="stat-label">Date</span>
+          <p class="stat-value">${escapeHtml(formatTalkDate(talk.date) || "TBD")}</p>
+        </div>
+      </div>
+    `;
 
     target.innerHTML = `
       <section class="talk-detail-hero">
@@ -530,7 +681,7 @@
         <article class="panel talk-detail-main">
           <h2>Overview</h2>
           <p>${escapeHtml(talk.summary)}</p>
-          <p class="timeline-meta">${escapeHtml(talkMeta(talk))}</p>
+          ${snapshot}
         </article>
         <article class="panel talk-detail-side">
           <h2>Resources</h2>
@@ -569,16 +720,59 @@
           .map((link) => `<li><a href="${escapeHtml(link.url)}">${escapeHtml(link.label)}</a></li>`)
           .join("");
 
+        const highlights = (item.highlights || [])
+          .map((highlight) => `<li>${escapeHtml(highlight)}</li>`)
+          .join("");
+
         return `
           <article class="content-card tall-card">
             <p class="card-kicker">${escapeHtml(item.kicker)}</p>
             <h2>${escapeHtml(item.title)}</h2>
             <p>${escapeHtml(item.summary)}</p>
+            ${highlights ? `<ul class="feature-list compact-list">${highlights}</ul>` : ""}
             ${actions ? `<div class="card-actions">${actions}</div>` : ""}
             ${links ? `<ul class="feature-list compact-list">${links}</ul>` : ""}
           </article>
         `;
       })
+      .join("");
+  }
+
+  function renderWritingPlatforms() {
+    const target = document.querySelector("[data-render='writing-platforms']");
+    if (!target || !Array.isArray(writing.platforms)) return;
+
+    target.innerHTML = writing.platforms
+      .map(
+        (item) => `
+          <article class="panel">
+            <p class="card-kicker">${escapeHtml(item.name)}</p>
+            <h2>${escapeHtml(item.name)}</h2>
+            <p>${escapeHtml(item.summary)}</p>
+            <div class="card-actions">
+              <a class="button button-primary" href="${escapeHtml(item.url)}" target="_blank" rel="noreferrer">Visit ${escapeHtml(item.name)}</a>
+            </div>
+          </article>
+        `
+      )
+      .join("");
+  }
+
+  function renderWritingFeatured() {
+    const target = document.querySelector("[data-render='writing-featured']");
+    if (!target || !Array.isArray(writing.featured)) return;
+
+    target.innerHTML = writing.featured
+      .map(
+        (item) => `
+          <article class="content-card">
+            <p class="card-kicker">${escapeHtml(item.platform)}</p>
+            <h3><a href="${escapeHtml(item.url)}" target="_blank" rel="noreferrer">${escapeHtml(item.title)}</a></h3>
+            <p>${escapeHtml(item.summary)}</p>
+            <a href="${escapeHtml(item.url)}" target="_blank" rel="noreferrer">Read piece</a>
+          </article>
+        `
+      )
       .join("");
   }
 
@@ -634,6 +828,25 @@
       .join("");
   }
 
+  function renderHomeWriting() {
+    const target = document.querySelector("[data-render='home-writing']");
+    if (!target || !Array.isArray(writing.featured)) return;
+
+    target.innerHTML = writing.featured
+      .slice(0, 2)
+      .map(
+        (item) => `
+          <article class="content-card">
+            <p class="card-kicker">${escapeHtml(item.platform)}</p>
+            <h3><a href="${escapeHtml(item.url)}" target="_blank" rel="noreferrer">${escapeHtml(item.title)}</a></h3>
+            <p>${escapeHtml(item.summary)}</p>
+            <a href="writing.html">Explore writing</a>
+          </article>
+        `
+      )
+      .join("");
+  }
+
   function renderProfile() {
     const target = document.querySelector("[data-render='profile-links']");
     if (!target) return;
@@ -649,19 +862,25 @@
     await loadSiteContent();
     await loadBibPublications();
     await loadTalksData();
+    await loadWritingData();
     renderProfile();
     renderEducation();
     renderExperience();
     renderSimpleList("skills", "[data-render='skills']");
     renderSimpleList("interests", "[data-render='interests']");
     renderThemes();
+    populatePublicationFilterControls();
     renderPublications();
     bindPublicationSortControl();
+    bindPublicationFilterControls();
     renderTalks();
     renderTalkDetail();
     renderTools();
+    renderWritingPlatforms();
+    renderWritingFeatured();
     renderHomeFeatured();
     renderHomeTools();
+    renderHomeWriting();
   }
 
   init();

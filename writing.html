@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Talk Detail | Ridwan Amure</title>
+    <title>Writing | Ridwan Amure</title>
     <meta
       name="description"
-      content="Detailed view of a talk by Ridwan Amure, including resources, memories, and event assets."
+      content="Essays, technical notes, and longer-form writing by Ridwan Amure across Substack and Medium."
     />
     <link rel="icon" href="images/favicon-32x32.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -27,13 +27,32 @@
           <a href="about.html">About</a>
           <a href="cv.html">CV</a>
           <a href="research.html">Research</a>
-          <a class="is-active" href="talks.html">Talks</a>
-          <a href="writing.html">Writing</a>
+          <a href="talks.html">Talks</a>
+          <a class="is-active" href="writing.html">Writing</a>
           <a href="tools.html">Tools</a>
         </nav>
       </header>
 
-      <main data-render="talk-detail"></main>
+      <main>
+        <section class="page-hero">
+          <p class="eyebrow">Writing</p>
+          <h1>Essays, explainers, and technical notes.</h1>
+          <p class="lead">
+            I use writing to think through graph mining, AI systems, research methods, and practical engineering ideas.
+          </p>
+        </section>
+
+        <section class="section-grid" data-render="writing-platforms"></section>
+
+        <section class="section-stack">
+          <div class="section-heading">
+            <p class="eyebrow">Featured Pieces</p>
+            <h2>Selected writing</h2>
+          </div>
+
+          <div class="card-grid" data-render="writing-featured"></div>
+        </section>
+      </main>
 
       <footer class="site-footer"></footer>
     </div>

@@ -28,6 +28,7 @@
           <a href="cv.html">CV</a>
           <a class="is-active" href="research.html">Research</a>
           <a href="talks.html">Talks</a>
+          <a href="writing.html">Writing</a>
           <a href="tools.html">Tools</a>
         </nav>
       </header>
@@ -50,17 +51,37 @@
         <section class="panel publication-controls">
           <div class="publication-controls-row">
             <h2>Publications</h2>
-            <label class="publication-sort-label" for="publication-sort">
-              <span>Sort by</span>
-              <select id="publication-sort" data-publication-sort>
-                <option value="date">Date</option>
-                <option value="type">Publication Type</option>
-                <option value="publisher">Publisher</option>
-                <option value="journal">Journal / Conference</option>
-                <option value="title">Name</option>
-              </select>
-            </label>
+            <div class="publication-control-group">
+              <label class="publication-sort-label" for="publication-sort">
+                <span>Sort by</span>
+                <select id="publication-sort" data-publication-sort>
+                  <option value="date">Date</option>
+                  <option value="type">Publication Type</option>
+                  <option value="publisher">Publisher</option>
+                  <option value="journal">Journal / Conference</option>
+                  <option value="title">Name</option>
+                </select>
+              </label>
+              <label class="publication-sort-label" for="publication-year-filter">
+                <span>Year</span>
+                <select id="publication-year-filter" data-publication-year-filter>
+                  <option value="">All years</option>
+                </select>
+              </label>
+              <label class="publication-sort-label" for="publication-type-filter">
+                <span>Type</span>
+                <select id="publication-type-filter" data-publication-type-filter>
+                  <option value="">All types</option>
+                </select>
+              </label>
+              <label class="publication-sort-label publication-search-label" for="publication-search">
+                <span>Search</span>
+                <input id="publication-search" type="search" placeholder="Title, venue, publisher" data-publication-search />
+              </label>
+              <button class="button button-secondary publication-clear-button" type="button" data-publication-clear>Clear</button>
+            </div>
           </div>
+          <p class="publication-results-copy" data-publication-results></p>
         </section>
 
         <section class="publication-list" data-render="publications"></section>

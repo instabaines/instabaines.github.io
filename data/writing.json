@@ -1,0 +1,28 @@
+{
+  "platforms": [
+    {
+      "name": "Substack",
+      "url": "https://ridwanamure.substack.com/",
+      "summary": "Essays on graph mining, AI systems, research thinking, and technical ideas in progress."
+    },
+    {
+      "name": "Medium",
+      "url": "https://medium.com/@rid1code",
+      "summary": "Technical writing on machine learning, engineering workflows, and practical AI topics."
+    }
+  ],
+  "featured": [
+    {
+      "platform": "Substack",
+      "title": "Why Subgraph Mining Matters",
+      "summary": "A short essay on why recurring structural patterns often matter more than isolated nodes when analyzing complex networks.",
+      "url": "https://open.substack.com/pub/ridwanamure/p/why-subgraph-mining-matters?r=18lad4&utm_campaign=post&utm_medium=web&showWelcomeOnShare=true"
+    },
+    {
+      "platform": "Medium",
+      "title": "What can your model see?",
+      "summary": "Visualize your image dataset from the perspective of your computer vision model.",
+      "url": "https://medium.com/p/295ab52dbb88"
+    }
+  ]
+}
