@@ -22,6 +22,14 @@
       .replaceAll("'", "&#39;");
   }
 
+  function toSiteUrl(value) {
+    const url = String(value || "").trim();
+    if (!url) return "";
+    if (/^(https?:|mailto:|tel:|#|\?)/i.test(url)) return url;
+    if (url.startsWith("/")) return url;
+    return `/${url}`;
+  }
+
   function renderList(items) {
     return items.map((item) => `<li>${escapeHtml(item)}</li>`).join("");
   }
@@ -88,9 +96,9 @@
               <p class="card-kicker">${escapeHtml(item.kicker)}</p>
               <span class="publication-badge publication-badge-${escapeHtml(item.typeTone || "general")}">${escapeHtml(item.typeLabel || "Publication")}</span>
             </div>
-            <h2>${item.linkUrl ? `<a href="${escapeHtml(item.linkUrl)}" target="_blank" rel="noreferrer">${escapeHtml(item.title)}</a>` : escapeHtml(item.title)}</h2>
+            <h2>${item.linkUrl ? `<a href="${escapeHtml(toSiteUrl(item.linkUrl))}" target="_blank" rel="noreferrer">${escapeHtml(item.title)}</a>` : escapeHtml(item.title)}</h2>
             <p>${item.summaryHtml || escapeHtml(item.summary)}</p>
-            ${item.linkUrl ? `<a href="${escapeHtml(item.linkUrl)}" target="_blank" rel="noreferrer">${escapeHtml(item.linkLabel || "Open publication")}</a>` : ""}
+            ${item.linkUrl ? `<a href="${escapeHtml(toSiteUrl(item.linkUrl))}" target="_blank" rel="noreferrer">${escapeHtml(item.linkLabel || "Open publication")}</a>` : ""}
           </article>
         `
       )
@@ -435,7 +443,7 @@
 
   async function loadBibPublications() {
     try {
-      const response = await fetch("articles.bib", { cache: "no-cache" });
+      const response = await fetch("/articles.bib", { cache: "no-cache" });
       if (!response.ok) {
         throw new Error(`Unable to load BibTeX: ${response.status}`);
       }
@@ -454,7 +462,7 @@
 
   async function loadSiteContent() {
     try {
-      const response = await fetch("data/site-content.json", { cache: "no-cache" });
+      const response = await fetch("/data/site-content.json", { cache: "no-cache" });
       if (!response.ok) {
         throw new Error(`Unable to load site content: ${response.status}`);
       }
@@ -480,7 +488,7 @@
 
   async function loadTalksData() {
     try {
-      const response = await fetch("data/talks.json", { cache: "no-cache" });
+      const response = await fetch("/data/talks.json", { cache: "no-cache" });
       if (!response.ok) {
         throw new Error(`Unable to load talks data: ${response.status}`);
       }
@@ -497,7 +505,7 @@
 
   async function loadWritingData() {
     try {
-      const response = await fetch("data/writing.json", { cache: "no-cache" });
+      const response = await fetch("/data/writing.json", { cache: "no-cache" });
       if (!response.ok) {
         throw new Error(`Unable to load writing data: ${response.status}`);
       }
@@ -557,13 +565,13 @@
         (item) => `
           <article class="timeline-item talk-card">
             <p class="card-kicker">${escapeHtml(item.venue || "Talk")}</p>
-            <h2><a href="talk-detail.html?slug=${encodeURIComponent(item.slug)}">${escapeHtml(item.title)}</a></h2>
+            <h2><a href="/talk-detail/?slug=${encodeURIComponent(item.slug)}">${escapeHtml(item.title)}</a></h2>
             <p class="timeline-meta">${escapeHtml(talkMeta(item))}</p>
             <p>${escapeHtml(item.summary)}</p>
             <div class="tag-row">
               ${(item.tags || []).map((tag) => `<span>${escapeHtml(tag)}</span>`).join("")}
             </div>
-            <a href="talk-detail.html?slug=${encodeURIComponent(item.slug)}">Explore talk details</a>
+            <a href="/talk-detail/?slug=${encodeURIComponent(item.slug)}">Explore talk details</a>
           </article>
         `
       )
@@ -582,7 +590,7 @@
     return links
       .map(
         (link) => `
-          <a class="resource-card ${linkTone(link.label)}" href="${escapeHtml(link.url)}" target="_blank" rel="noreferrer">
+          <a class="resource-card ${linkTone(link.label)}" href="${escapeHtml(toSiteUrl(link.url))}" target="_blank" rel="noreferrer">
             <span class="resource-label">${escapeHtml(link.label)}</span>
             <span class="resource-hint">Open resource</span>
           </a>
@@ -601,7 +609,7 @@
         <section class="panel">
           <h2>Talk not found</h2>
           <p>The requested talk could not be found. Return to the talks page to browse available entries.</p>
-          <a class="button button-primary" href="talks.html">Back to talks</a>
+          <a class="button button-primary" href="/talks/">Back to talks</a>
         </section>
       `;
       return;
@@ -610,7 +618,7 @@
     const hero = talk.assets && talk.assets.heroImage
       ? `
         <div class="talk-detail-media-card">
-          <img class="talk-detail-hero-image" src="${escapeHtml(talk.assets.heroImage)}" alt="${escapeHtml(talk.title)}" />
+          <img class="talk-detail-hero-image" src="${escapeHtml(toSiteUrl(talk.assets.heroImage))}" alt="${escapeHtml(talk.title)}" />
         </div>
       `
       : `
@@ -624,7 +632,7 @@
     const gallery = talk.assets && talk.assets.gallery && talk.assets.gallery.length
       ? `
         <div class="detail-gallery">
-          ${talk.assets.gallery.map((image) => `<img src="${escapeHtml(image)}" alt="${escapeHtml(talk.title)} gallery image" />`).join("")}
+          ${talk.assets.gallery.map((image) => `<img src="${escapeHtml(toSiteUrl(image))}" alt="${escapeHtml(talk.title)} gallery image" />`).join("")}
         </div>
       `
       : "";
@@ -674,7 +682,7 @@
           <div class="talk-detail-meta-row">
             ${renderTalkMetaPills(talk)}
           </div>
-          ${talk.links && talk.links.length ? `<div class="card-actions">${talk.links.slice(0, 2).map((link) => `<a class="button ${link.label.toLowerCase().includes("slide") ? "button-primary" : "button-secondary"}" href="${escapeHtml(link.url)}" target="_blank" rel="noreferrer">${escapeHtml(link.label)}</a>`).join("")}</div>` : ""}
+          ${talk.links && talk.links.length ? `<div class="card-actions">${talk.links.slice(0, 2).map((link) => `<a class="button ${link.label.toLowerCase().includes("slide") ? "button-primary" : "button-secondary"}" href="${escapeHtml(toSiteUrl(link.url))}" target="_blank" rel="noreferrer">${escapeHtml(link.label)}</a>`).join("")}</div>` : ""}
         </div>
       </section>
       <section class="talk-detail-grid">
@@ -711,13 +719,13 @@
         const actions = (item.actions || [])
           .map(
             (action) => `
-              <a class="button ${action.primary ? "button-primary" : "button-secondary"}" href="${escapeHtml(action.url)}">${escapeHtml(action.label)}</a>
+              <a class="button ${action.primary ? "button-primary" : "button-secondary"}" href="${escapeHtml(toSiteUrl(action.url))}">${escapeHtml(action.label)}</a>
             `
           )
           .join("");
 
         const links = (item.links || [])
-          .map((link) => `<li><a href="${escapeHtml(link.url)}">${escapeHtml(link.label)}</a></li>`)
+          .map((link) => `<li><a href="${escapeHtml(toSiteUrl(link.url))}">${escapeHtml(link.label)}</a></li>`)
           .join("");
 
         const highlights = (item.highlights || [])
@@ -750,7 +758,7 @@
             <h2>${escapeHtml(item.name)}</h2>
             <p>${escapeHtml(item.summary)}</p>
             <div class="card-actions">
-              <a class="button button-primary" href="${escapeHtml(item.url)}" target="_blank" rel="noreferrer">Visit ${escapeHtml(item.name)}</a>
+              <a class="button button-primary" href="${escapeHtml(toSiteUrl(item.url))}" target="_blank" rel="noreferrer">Visit ${escapeHtml(item.name)}</a>
             </div>
           </article>
         `
@@ -767,9 +775,9 @@
         (item) => `
           <article class="content-card">
             <p class="card-kicker">${escapeHtml(item.platform)}</p>
-            <h3><a href="${escapeHtml(item.url)}" target="_blank" rel="noreferrer">${escapeHtml(item.title)}</a></h3>
+            <h3><a href="${escapeHtml(toSiteUrl(item.url))}" target="_blank" rel="noreferrer">${escapeHtml(item.title)}</a></h3>
             <p>${escapeHtml(item.summary)}</p>
-            <a href="${escapeHtml(item.url)}" target="_blank" rel="noreferrer">Read piece</a>
+            <a href="${escapeHtml(toSiteUrl(item.url))}" target="_blank" rel="noreferrer">Read piece</a>
           </article>
         `
       )
@@ -784,9 +792,9 @@
       (item) => `
         <article class="content-card">
           <p class="card-kicker">${escapeHtml(item.kicker)}</p>
-          <h3>${item.linkUrl ? `<a href="${escapeHtml(item.linkUrl)}" target="_blank" rel="noreferrer">${escapeHtml(item.title)}</a>` : escapeHtml(item.title)}</h3>
+          <h3>${item.linkUrl ? `<a href="${escapeHtml(toSiteUrl(item.linkUrl))}" target="_blank" rel="noreferrer">${escapeHtml(item.title)}</a>` : escapeHtml(item.title)}</h3>
           <p>${item.summaryHtml || escapeHtml(item.summary)}</p>
-          <a href="research.html">See publications</a>
+          <a href="/research/">See publications</a>
         </article>
       `
     );
@@ -798,9 +806,9 @@
         (item) => `
           <article class="content-card">
             <p class="card-kicker">Talk - ${escapeHtml(item.date ? item.date.slice(0, 4) : "Recent")}</p>
-            <h3><a href="talk-detail.html?slug=${encodeURIComponent(item.slug)}">${escapeHtml(item.title)}</a></h3>
+            <h3><a href="/talk-detail/?slug=${encodeURIComponent(item.slug)}">${escapeHtml(item.title)}</a></h3>
             <p>${escapeHtml(item.summary)}</p>
-            <a href="talk-detail.html?slug=${encodeURIComponent(item.slug)}">View talk</a>
+            <a href="/talk-detail/?slug=${encodeURIComponent(item.slug)}">View talk</a>
           </article>
         `
       );
@@ -816,10 +824,10 @@
       .slice(0, 3)
       .map((item) => {
         const primaryAction = (item.actions || [])[0];
-        const href = primaryAction ? primaryAction.url : "tools.html";
+        const href = primaryAction ? primaryAction.url : "/tools/";
 
         return `
-          <a class="tool-card" href="${escapeHtml(href)}">
+          <a class="tool-card" href="${escapeHtml(toSiteUrl(href))}">
             <span class="tool-title">${escapeHtml(item.title)}</span>
             <span class="tool-copy">${escapeHtml(item.summary)}</span>
           </a>
@@ -838,9 +846,9 @@
         (item) => `
           <article class="content-card">
             <p class="card-kicker">${escapeHtml(item.platform)}</p>
-            <h3><a href="${escapeHtml(item.url)}" target="_blank" rel="noreferrer">${escapeHtml(item.title)}</a></h3>
+            <h3><a href="${escapeHtml(toSiteUrl(item.url))}" target="_blank" rel="noreferrer">${escapeHtml(item.title)}</a></h3>
             <p>${escapeHtml(item.summary)}</p>
-            <a href="writing.html">Explore writing</a>
+            <a href="/writing/">Explore writing</a>
           </article>
         `
       )

@@ -13,8 +13,8 @@
       
     ],
     "links": [
-      { "label": "LLM from scratch session Code", "url": "files/LLM_from_scratch_session.html" },
-      { "label": "ML Regression Session Code", "url": "files/ML_Regression_Session.html" }
+      { "label": "LLM from scratch session Code", "url": "/files/LLM_from_scratch_session.html" },
+      { "label": "ML Regression Session Code", "url": "/files/ML_Regression_Session.html" }
     ],
     "assets": {
       "heroImage":  "assets/talks/aisoc-2025/hero.svg",
@@ -59,8 +59,8 @@
     ],
     "links": [
       { "label": "Slides", "url": "files/Agents at Work – Accelerating and Innovating Business Processes with AI Agents.pdf" },
-      { "label": "Related paper", "url": "research.html" },
-      { "label": "Talk map entry", "url": "talkmap/map.html" }
+      { "label": "Related paper", "url": "/research/" },
+      { "label": "Talk map entry", "url": "/talkmap/map.html" }
     ],
     "assets": {
       "heroImage":  "assets/talks/rag-systems-nsbe-2025/hero.png",
@@ -86,8 +86,8 @@
     ],
     "links": [
       { "label": "Slides", "url": "files/Building and Deploying Retrieval-Augmented Generation (RAG) Systems for Quality Business Impact.pdf" },
-      { "label": "Related paper", "url": "research.html" },
-      { "label": "Talk map entry", "url": "talkmap/map.html" }
+      { "label": "Related paper", "url": "/research/" },
+      { "label": "Talk map entry", "url": "/talkmap/map.html" }
     ],
     "assets": {
       "heroImage":  "assets/talks/rag-systems-nsbe-2025/img1.png",

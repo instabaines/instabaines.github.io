@@ -97,7 +97,7 @@
         "Designed for reproducible research workflows"
       ],
       "actions": [
-        { "label": "View docs", "url": "submine.html", "primary": true },
+        { "label": "View docs", "url": "submine/", "primary": true },
         { "label": "Open on GitHub", "url": "https://github.com/instabaines/submine", "primary": false }
       ],
       "links": [
@@ -114,7 +114,7 @@
         "Built for larger sparse network analysis"
       ],
       "actions": [
-        { "label": "View docs", "url": "temporal-eigenvector-centrality.html", "primary": true },
+        { "label": "View docs", "url": "temporal-eigenvector-centrality/", "primary": true },
         { "label": "Open on GitHub", "url": "https://github.com/instabaines/temporal_eigen_vector_centrality", "primary": false }
       ],
       "links": [
