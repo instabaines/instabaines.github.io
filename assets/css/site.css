@@ -344,6 +344,77 @@ main {
   font-weight: 800;
 }
 
+.publication-meta-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.publication-badge {
+  display: inline-flex;
+  align-items: center;
+  min-height: 30px;
+  padding: 0 10px;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.publication-badge-journal {
+  background: #0f766e;
+}
+
+.publication-badge-conference {
+  background: #9a3412;
+}
+
+.publication-badge-book {
+  background: #4338ca;
+}
+
+.publication-badge-general {
+  background: #475569;
+}
+
+.publication-controls-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.publication-controls-row h2 {
+  margin: 0;
+}
+
+.publication-sort-label {
+  display: inline-grid;
+  gap: 8px;
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.publication-sort-label span {
+  font-size: 0.9rem;
+}
+
+.publication-sort-label select {
+  min-width: 220px;
+  min-height: 46px;
+  padding: 0 14px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: rgba(255, 253, 249, 0.92);
+  color: var(--text);
+  font: inherit;
+}
+
 .publication-item h2 a,
 .talk-card h2 a {
   text-decoration: none;

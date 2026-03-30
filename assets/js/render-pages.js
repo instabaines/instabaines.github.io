@@ -1,6 +1,7 @@
 (function () {
   let data = null;
   let talks = [];
+  let publicationSortKey = "date";
 
   if (!data) {
     data = {};
@@ -71,13 +72,16 @@
     const target = document.querySelector("[data-render='publications']");
     if (!target) return;
 
-    target.innerHTML = data.publications
+    target.innerHTML = sortPublications(data.publications || [])
       .map(
         (item) => `
           <article class="publication-item">
-            <p class="card-kicker">${escapeHtml(item.kicker)}</p>
+            <div class="publication-meta-row">
+              <p class="card-kicker">${escapeHtml(item.kicker)}</p>
+              <span class="publication-badge publication-badge-${escapeHtml(item.typeTone || "general")}">${escapeHtml(item.typeLabel || "Publication")}</span>
+            </div>
             <h2>${item.linkUrl ? `<a href="${escapeHtml(item.linkUrl)}" target="_blank" rel="noreferrer">${escapeHtml(item.title)}</a>` : escapeHtml(item.title)}</h2>
-            <p>${escapeHtml(item.summary)}</p>
+            <p>${item.summaryHtml || escapeHtml(item.summary)}</p>
             ${item.linkUrl ? `<a href="${escapeHtml(item.linkUrl)}" target="_blank" rel="noreferrer">${escapeHtml(item.linkLabel || "Open publication")}</a>` : ""}
           </article>
         `
@@ -172,27 +176,62 @@
     return fields;
   }
 
-  function formatAuthors(authorText) {
+  function parseAuthorNames(authorText) {
     if (!authorText) return "";
 
-    const authors = authorText
+    return authorText
       .split(/\s+and\s+/i)
       .map((part) => part.trim())
       .filter(Boolean)
       .map((name) => {
         if (name.includes(",")) {
           const parts = name.split(",").map((item) => item.trim());
-          return parts[0];
+          return {
+            full: name,
+            family: parts[0] || name,
+            given: parts.slice(1).join(" ")
+          };
         }
+
         const parts = name.split(/\s+/).filter(Boolean);
-        return parts[parts.length - 1] || name;
+        return {
+          full: name,
+          family: parts[parts.length - 1] || name,
+          given: parts.slice(0, -1).join(" ")
+        };
       });
+  }
+
+  function isRidwanAuthor(author) {
+    const family = String(author.family || "").toLowerCase();
+    const given = String(author.given || "").toLowerCase();
+    const full = String(author.full || "").toLowerCase();
+
+    return family.includes("amure") || given.includes("ridwan") || full.includes("ridwan");
+  }
+
+  function renderAuthorLabel(author) {
+    const label = escapeHtml(author.family || author.full || "");
+    return isRidwanAuthor(author) ? `<strong>${label}</strong>` : label;
+  }
+
+  function formatAuthors(authorText) {
+    const authors = parseAuthorNames(authorText);
+    if (!authors.length) return "";
 
     if (authors.length <= 3) {
-      return authors.join(", ");
+      return authors.map(renderAuthorLabel).join(", ");
     }
 
-    return `${authors.slice(0, 3).join(", ")}, et al.`;
+    const ridwanIndex = authors.findIndex(isRidwanAuthor);
+    const visibleCount = ridwanIndex >= 0 ? Math.max(3, ridwanIndex + 1) : 3;
+    const visibleAuthors = authors.slice(0, visibleCount);
+
+    if (visibleAuthors.length >= authors.length) {
+      return visibleAuthors.map(renderAuthorLabel).join(", ");
+    }
+
+    return `${visibleAuthors.map(renderAuthorLabel).join(", ")}, et al.`;
   }
 
   function sentenceCaseVenue(fields) {
@@ -212,6 +251,28 @@
     return summaryBits.join(" - ");
   }
 
+  function publicationTypeMeta(fields) {
+    const type = fields.entrytype || "";
+
+    if (type === "article") {
+      return { label: "Journal", tone: "journal" };
+    }
+
+    if (type === "inproceedings" || type === "conference" || type === "proceedings") {
+      return { label: "Conference", tone: "conference" };
+    }
+
+    if (type === "book" || type === "inbook" || type === "incollection") {
+      return { label: "Book", tone: "book" };
+    }
+
+    return { label: "Publication", tone: "general" };
+  }
+
+  function publicationVenueName(fields) {
+    return fields.journal || fields.booktitle || fields.organization || "";
+  }
+
   function publicationLink(fields) {
     if (fields.url) return fields.url;
     if (!fields.doi) return "";
@@ -222,20 +283,62 @@
     return `https://doi.org/${doi.replace(/^doi:\s*/i, "")}`;
   }
 
+  function compareText(a, b) {
+    return String(a || "").localeCompare(String(b || ""), undefined, { sensitivity: "base" });
+  }
+
+  function sortPublications(items) {
+    return [...items].sort((a, b) => {
+      if (publicationSortKey === "type") {
+        return compareText(a.typeLabel, b.typeLabel) || (b.year || 0) - (a.year || 0) || compareText(a.title, b.title);
+      }
+
+      if (publicationSortKey === "publisher") {
+        return compareText(a.publisher, b.publisher) || (b.year || 0) - (a.year || 0) || compareText(a.title, b.title);
+      }
+
+      if (publicationSortKey === "journal") {
+        return compareText(a.venueName, b.venueName) || (b.year || 0) - (a.year || 0) || compareText(a.title, b.title);
+      }
+
+      if (publicationSortKey === "title") {
+        return compareText(a.title, b.title) || (b.year || 0) - (a.year || 0);
+      }
+
+      return (b.year || 0) - (a.year || 0) || compareText(a.title, b.title);
+    });
+  }
+
   function normalizeBibPublications(entries) {
     return entries
       .map(parseBibFields)
       .filter((fields) => fields.title)
       .map((fields) => ({
         kicker: `${fields.year || "In progress"} - ${sentenceCaseVenue(fields)}`,
+        typeLabel: publicationTypeMeta(fields).label,
+        typeTone: publicationTypeMeta(fields).tone,
         title: fields.title,
         summary: publicationSummary(fields),
+        summaryHtml: publicationSummary(fields),
+        publisher: fields.publisher || "",
+        venueName: publicationVenueName(fields),
         linkLabel: publicationLink(fields) ? "Open publication" : "",
         linkUrl: publicationLink(fields),
         year: Number.parseInt(fields.year || "0", 10) || 0
       }))
       .sort((a, b) => b.year - a.year || a.title.localeCompare(b.title))
-      .map(({ year, ...rest }) => rest);
+      .map((item) => item);
+  }
+
+  function bindPublicationSortControl() {
+    const control = document.querySelector("[data-publication-sort]");
+    if (!control) return;
+
+    control.value = publicationSortKey;
+    control.addEventListener("change", (event) => {
+      publicationSortKey = event.target.value || "date";
+      renderPublications();
+    });
   }
 
   async function loadBibPublications() {
@@ -553,6 +656,7 @@
     renderSimpleList("interests", "[data-render='interests']");
     renderThemes();
     renderPublications();
+    bindPublicationSortControl();
     renderTalks();
     renderTalkDetail();
     renderTools();
