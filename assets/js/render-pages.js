@@ -785,7 +785,7 @@
         <article class="content-card">
           <p class="card-kicker">${escapeHtml(item.kicker)}</p>
           <h3>${item.linkUrl ? `<a href="${escapeHtml(item.linkUrl)}" target="_blank" rel="noreferrer">${escapeHtml(item.title)}</a>` : escapeHtml(item.title)}</h3>
-          <p>${escapeHtml(item.summary)}</p>
+          <p>${item.summaryHtml || escapeHtml(item.summary)}</p>
           <a href="research.html">See publications</a>
         </article>
       `
