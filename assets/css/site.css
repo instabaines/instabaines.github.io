@@ -150,9 +150,9 @@ main {
 
 .hero h1,
 .page-hero h1 {
-  font-size: clamp(2.85rem, 4.3vw, 4.9rem);
-  max-width: 11ch;
-  letter-spacing: -0.03em;
+  font-size: clamp(2.15rem, 3.1vw, 3.55rem);
+  max-width: 16ch;
+  letter-spacing: -0.025em;
 }
 
 .lead {
@@ -184,7 +184,7 @@ main {
 
 .hero-copy {
   display: grid;
-  align-content: center;
+  align-content: start;
   gap: 18px;
 }
 
@@ -474,9 +474,9 @@ main {
 .talk-detail-intro h1 {
   margin: 0;
   font-family: "Fraunces", Georgia, serif;
-  font-size: clamp(2.35rem, 4.2vw, 4.2rem);
+  font-size: clamp(2rem, 3.2vw, 3.4rem);
   line-height: 1.04;
-  max-width: 14ch;
+  max-width: 17ch;
 }
 
 .talk-detail-meta-row {
