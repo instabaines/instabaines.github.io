@@ -1,13 +1,12 @@
 {
   "profile": {
     "location": "Little Rock, Arkansas, United States",
-    "email": "amureridwan002@gmail.com",
     "linkedin": "https://linkedin.com/in/ridwan-amure"
   },
   "education": [
     {
       "school": "University of Arkansas at Little Rock",
-      "detail": "PhD in Computer Science - Expected December 2026"
+      "detail": "PhD in Computer Science - Expected May 2027"
     },
     {
       "school": "University of Arkansas at Little Rock",
@@ -16,57 +15,61 @@
   ],
   "experience": [
     {
-      "company": "COSMOS Research Center, University of Arkansas at Little Rock",
-      "rolePeriod": "Researcher - August 2023 to present",
-      "bullets": [
-        "Lead research on cyber behaviors through large-scale social media analysis.",
-        "Study mechanisms and entities involved in cross-platform narrative diffusion.",
-        "Develop multiplatform knowledge graph embeddings and machine learning models to extract behavioral insights."
-      ]
-    },
-    {
       "company": "Meta",
       "rolePeriod": "Software Engineering Intern, Machine Learning - May 2025 to August 2025",
       "bullets": [
-        "Built a training data pipeline reducing activity-to-serving latency from 14 days to 1 day.",
-        "Implemented step-changes in model-based retrieval via feature ablation and new architectures.",
-        "Designed and deployed transformer-only interaction architectures for ranking models."
+        "Built end-to-end ML pipeline reducing training data latency from 14 days to 1 day, enabling near real-time model iteration and deployment.",
+        "Improved large-scale ranking systems via feature engineering, feature ablation, and integration of new high-impact signals.",
+        "Designed transformer-based interaction architecture for retrieval and ranking systems, optimizing inference-time performance.",
+        "Developed scalable data pipelines supporting training and evaluation of production ML models on large datasets."
       ]
     },
     {
-      "company": "IQuartic (A NewWave Company)",
+      "company": "University of Arkansas at Little Rock",
+      "rolePeriod": "Researcher - August 2023 to Present",
+      "bullets": [
+        "Built COSMOS, a large-scale AI pipeline for cross-platform social media analysis, processing millions of posts across datasets with more than 100K users.",
+        "Developed knowledge graph and embedding-based models for narrative tracking and entity representation across platforms.",
+        "Designed ML systems for modeling information diffusion and behavioral dynamics using graph-based and statistical approaches.",
+        "Implemented scalable data pipelines for preprocessing, feature extraction, and modeling on high-dimensional datasets.",
+        "Applied network science and machine learning to extract actionable insights from complex relational data."
+      ]
+    },
+    {
+      "company": "IQuartic (NewWave Company)",
       "rolePeriod": "Senior Machine Learning Engineer - January 2023 to August 2023",
       "bullets": [
-        "Developed NLP pipelines for medical risk adjustment, improving coding accuracy and efficiency.",
-        "Designed Bayesian models to detect suboptimal medical codings.",
-        "Managed the full ML lifecycle from preprocessing to deployment.",
-        "Led an engineering team building an end-to-end risk adjustment platform."
+        "Developed end-to-end ML systems for ICD-to-HCC risk adjustment, increasing financial gains by over 30% through improved coding accuracy.",
+        "Built Bayesian inference models to identify missed or suboptimal medical coding in electronic health records.",
+        "Designed NLP and RAG pipelines for structured extraction and analysis of clinical text data.",
+        "Deployed production ML models with full lifecycle management, including training, validation, and monitoring."
       ]
     },
     {
-      "company": "Parallelscore",
+      "company": "ParallelScore",
       "rolePeriod": "Data Science Engineer - September 2021 to April 2023",
       "bullets": [
-        "Implemented transformer-based NLP pipelines for named entity recognition and information extraction.",
-        "Developed production ML microservices using Docker, AWS, Jenkins, and Kubernetes.",
-        "Supported end-to-end project delivery with strong documentation and engineering practices."
+        "Developed transformer-based NLP models for medical coding tasks, improving PHI detection from below 50% to 95% in QA and reaching 89% accuracy in production.",
+        "Built scalable ML pipelines for processing and extracting structured insights from large-scale unstructured clinical text.",
+        "Designed and deployed inference systems using AWS, Docker, and Kubernetes for real-time model serving.",
+        "Conducted model evaluation, error analysis, and performance optimization for production-grade AI systems."
       ]
     },
     {
       "company": "Babban Gona",
-      "rolePeriod": "Enterprise System Engineer, Machine Learning - September 2020 to September 2021",
+      "rolePeriod": "Machine Learning Engineer - September 2020 to September 2021",
       "bullets": [
-        "Built low-latency, high-accuracy computer vision models for crop condition detection.",
-        "Designed ML and AI applications for agricultural intelligence serving more than 200,000 farmers.",
-        "Maintained production computer vision systems and supported field deployment."
+        "Built computer vision models deployed to over 200,000 users for agricultural diagnostics.",
+        "Developed low-latency inference systems for real-time detection of plant conditions.",
+        "Maintained and optimized production ML systems in resource-constrained environments."
       ]
     }
   ],
   "skills": [
-    "Machine learning: PyTorch, TensorFlow, Bayesian models, transformers, knowledge graphs",
-    "Data science: statistics, Spark, SQL, Pandas, NumPy",
-    "Engineering and DevOps: Docker, AWS, Kubernetes, Jenkins, microservices",
-    "NLP: named entity recognition, text classification, information extraction pipelines"
+    "Machine Learning: PyTorch, TensorFlow, Transformers, RAG, Agents, Agentic AI",
+    "Data Science: Python, SQL, Pandas, NumPy, Bayesian Models, Knowledge Graphs",
+    "Engineering and DevOps: AWS, Docker, Kubernetes, Scalable ML Pipelines",
+    "NLP: Information Extraction, Medical Coding, Ranking Systems, Language Model Workflows"
   ],
   "interests": [
     "Computational Social Science",
@@ -88,7 +91,7 @@
   ],
   "tools": [
     {
-      "kicker": "Graph mining",
+      "kicker": "Graph Mining",
       "title": "submine",
       "summary": "A research-grade library for frequent subgraph mining with a unified interface over multiple mining backends and graph formats.",
       "highlights": [
@@ -105,7 +108,7 @@
       ]
     },
     {
-      "kicker": "Network analysis",
+      "kicker": "Network Analysis",
       "title": "Temporal Eigenvector Centrality",
       "summary": "A C++ implementation with Python bindings for centrality analysis on temporal and multiplex networks.",
       "highlights": [

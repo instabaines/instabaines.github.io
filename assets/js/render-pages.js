@@ -859,11 +859,21 @@
     const target = document.querySelector("[data-render='profile-links']");
     if (!target) return;
 
-    target.innerHTML = `
-      <li>${escapeHtml(data.profile.location)}</li>
-      <li><a href="mailto:${escapeHtml(data.profile.email)}">${escapeHtml(data.profile.email)}</a></li>
-      <li><a href="${escapeHtml(data.profile.linkedin)}" target="_blank" rel="noreferrer">${escapeHtml(data.profile.linkedin.replace("https://", ""))}</a></li>
-    `;
+    const items = [`<li>${escapeHtml(data.profile.location)}</li>`];
+
+    if (data.profile.email) {
+      items.push(
+        `<li><a href="mailto:${escapeHtml(data.profile.email)}">${escapeHtml(data.profile.email)}</a></li>`
+      );
+    }
+
+    if (data.profile.linkedin) {
+      items.push(
+        `<li><a href="${escapeHtml(data.profile.linkedin)}" target="_blank" rel="noreferrer">${escapeHtml(data.profile.linkedin.replace("https://", ""))}</a></li>`
+      );
+    }
+
+    target.innerHTML = items.join("");
   }
 
   async function init() {
