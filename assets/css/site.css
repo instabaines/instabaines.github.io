@@ -732,6 +732,99 @@ main {
   border-radius: 14px;
 }
 
+.compact-heading {
+  margin-bottom: 18px;
+}
+
+.compact-heading h2 {
+  margin-bottom: 0;
+}
+
+.muted-copy {
+  margin: 0;
+  color: var(--muted);
+}
+
+.talk-map-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(300px, 0.85fr);
+  gap: 24px;
+}
+
+.talk-map-sidebar {
+  display: grid;
+  gap: 24px;
+  align-content: start;
+}
+
+.talk-map-panel {
+  min-width: 0;
+}
+
+.talk-map-canvas {
+  min-height: 620px;
+  border-radius: 24px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: rgba(255, 253, 249, 0.92);
+}
+
+.talk-map-list,
+.missing-talk-list {
+  display: grid;
+  gap: 14px;
+}
+
+.talk-map-entry,
+.missing-talk-card {
+  padding: 16px 18px;
+  border-radius: 18px;
+  border: 1px solid var(--line);
+  background: rgba(255, 253, 249, 0.9);
+}
+
+.talk-map-entry h3,
+.missing-talk-card h3 {
+  margin: 0 0 8px;
+  font-size: 1.05rem;
+}
+
+.talk-map-entry p,
+.missing-talk-card p {
+  margin: 0;
+}
+
+.talk-map-entry-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: baseline;
+  margin-bottom: 10px;
+}
+
+.talk-map-date,
+.talk-map-meta {
+  color: var(--muted);
+  font-size: 0.94rem;
+}
+
+.talk-map-meta {
+  margin-bottom: 14px;
+}
+
+.talk-map-focus {
+  width: fit-content;
+}
+
+.map-popup h3 {
+  margin: 0 0 8px;
+  font-size: 1rem;
+}
+
+.map-popup p {
+  margin: 0 0 6px;
+}
+
 .site-footer {
   padding: 24px 4px 0;
   color: var(--muted);

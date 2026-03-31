@@ -1,34 +1,45 @@
 [
-   {
-      "slug": "aisoc-2025",
+  {
+    "slug": "aisoc-2025",
     "title": "Machine Learning Regression and Building Large Language Models from scratch",
-    "date": "2025",
+    "date": "2025-09-17",
     "venue": "AI Summer of Code 2025",
     "location": "Lagos, Nigeria (Virtual)",
+    "map": {
+      "label": "Lagos, Nigeria",
+      "lat": 6.5244,
+      "lng": 3.3792,
+      "mode": "virtual"
+    },
     "summary": "Exploring Different Regression Methods and Building Large Language Models from scratch.",
     "memories": [
       "Show Learners how to build a large language model from scratch and understand the underlying regression methods.",
       "Engaged with a curious audience about how different regression techniques can be applied in machine learning",
       "Implement different regression methods from scracth with maths and code to show how they work and their tradeoffs."
-      
     ],
     "links": [
       { "label": "LLM from scratch session Code", "url": "/files/LLM_from_scratch_session.html" },
-      { "label": "ML Regression Session Code", "url": "/files/ML_Regression_Session.html" }
+      { "label": "ML Regression Session Code", "url": "/files/ML_Regression_Session.html" },
+      { "label": "Talk map entry", "url": "/talkmap/" }
     ],
     "assets": {
-      "heroImage":  "assets/talks/aisoc-2025/hero.svg",
-      "gallery": [
-      ]
+      "heroImage": "assets/talks/aisoc-2025/hero.svg",
+      "gallery": []
     },
     "tags": ["Mathematics", "Machine Learning", "AI Foundations", "Education"]
-  }, 
+  },
   {
-      "slug": "aisoc-2024",
+    "slug": "aisoc-2024",
     "title": "Mathematical Foundations of AI",
     "date": "2024-02-09",
     "venue": "AI Summer of Code 2024",
     "location": "Lagos, Nigeria (Virtual)",
+    "map": {
+      "label": "Lagos, Nigeria",
+      "lat": 6.5244,
+      "lng": 3.3792,
+      "mode": "virtual"
+    },
     "summary": "Exploring the mathematical underpinnings of AI systems and their implications for design and evaluation.",
     "memories": [
       "Expose learnrs to the mathematical foundations of Machine learning and AI systems.",
@@ -36,21 +47,27 @@
       "Engaged with a curious audience about how mathematical concepts can inform better ML algorithm design and evaluation."
     ],
     "links": [
-      { "label": "Slides", "url": "files/Mathematical Foundations of AI.pdf" }
+      { "label": "Slides", "url": "files/Mathematical Foundations of AI.pdf" },
+      { "label": "Talk map entry", "url": "/talkmap/" }
     ],
     "assets": {
-      "heroImage":  "assets/talks/aisoc-2024/hero.png",
-      "gallery": [
-      ]
+      "heroImage": "assets/talks/aisoc-2024/hero.png",
+      "gallery": []
     },
     "tags": ["Mathematics", "Machine Learning", "AI Foundations", "Education"]
   },
   {
     "slug": "agent-nsbe-2026",
-    "title": "Agents at Work –Accelerating and Innovating Business Processes with AI Agents",
+    "title": "Agents at Work - Accelerating and Innovating Business Processes with AI Agents",
     "date": "2026-03-20",
     "venue": "NSBE 2026",
     "location": "Baltimore, Maryland",
+    "map": {
+      "label": "Baltimore, Maryland",
+      "lat": 39.2904,
+      "lng": -76.6122,
+      "mode": "in-person"
+    },
     "summary": "Levergaing Agents and Agentic AI for improved business processes",
     "memories": [
       "Great conversation with practitioners about evaluation, latency, and deployment tradeoffs.",
@@ -60,17 +77,17 @@
     "links": [
       { "label": "Slides", "url": "files/Agents at Work – Accelerating and Innovating Business Processes with AI Agents.pdf" },
       { "label": "Related paper", "url": "/research/" },
-      { "label": "Talk map entry", "url": "/talkmap/map.html" }
+      { "label": "Talk map entry", "url": "/talkmap/" }
     ],
     "assets": {
-      "heroImage":  "assets/talks/rag-systems-nsbe-2025/hero.png",
+      "heroImage": "assets/talks/rag-systems-nsbe-2025/hero.png",
       "gallery": [
         "assets/talks/rag-systems-nsbe-2025/img1.jpg",
         "assets/talks/rag-systems-nsbe-2025/img2.png",
         "assets/talks/rag-systems-nsbe-2025/img3.png"
       ]
     },
-    "tags": ["Agent", "Agentic AI","LLMs", "Production AI", "Applied ML"]
+    "tags": ["Agent", "Agentic AI", "LLMs", "Production AI", "Applied ML"]
   },
   {
     "slug": "rag-systems-nsbe-2025",
@@ -78,6 +95,12 @@
     "date": "2025-03-07",
     "venue": "NSBE 2025",
     "location": "Chicago, Illinois",
+    "map": {
+      "label": "Chicago, Illinois",
+      "lat": 41.8781,
+      "lng": -87.6298,
+      "mode": "in-person"
+    },
     "summary": "Practical considerations for taking RAG systems from concept to measurable business impact.",
     "memories": [
       "Great conversation with practitioners about evaluation, latency, and deployment tradeoffs.",
@@ -87,13 +110,12 @@
     "links": [
       { "label": "Slides", "url": "files/Building and Deploying Retrieval-Augmented Generation (RAG) Systems for Quality Business Impact.pdf" },
       { "label": "Related paper", "url": "/research/" },
-      { "label": "Talk map entry", "url": "/talkmap/map.html" }
+      { "label": "Talk map entry", "url": "/talkmap/" }
     ],
     "assets": {
-      "heroImage":  "assets/talks/rag-systems-nsbe-2025/img1.png",
+      "heroImage": "assets/talks/rag-systems-nsbe-2025/img1.png",
       "gallery": [
         "assets/talks/rag-systems-nsbe-2025/img4.jpg",
-       
         "assets/talks/rag-systems-nsbe-2025/img3.png"
       ]
     },
@@ -104,7 +126,13 @@
     "title": "Scientific Modelling Workshop",
     "date": "2021-11-27",
     "venue": "EAGE NGYP",
-    "location": "",
+    "location": "Lagos, Nigeria (Virtual)",
+    "map": {
+      "label": "Lagos, Nigeria",
+      "lat": 6.5244,
+      "lng": 3.3792,
+      "mode": "virtual"
+    },
     "summary": "Workshop-oriented session centered on scientific and computational modeling practice.",
     "memories": [
       "Focused on practical modeling intuition and how to connect equations, computation, and domain questions."
@@ -121,7 +149,13 @@
     "title": "Data Science and Machine Learning for Engineers",
     "date": "2021-11-07",
     "venue": "SPE NGYP",
-    "location": "",
+    "location": "Lagos, Nigeria (Virtual)",
+    "map": {
+      "label": "Lagos, Nigeria",
+      "lat": 6.5244,
+      "lng": 3.3792,
+      "mode": "virtual"
+    },
     "summary": "Applied data science and machine learning concepts tailored for engineering audiences.",
     "memories": [
       "Explained machine learning from an engineering systems perspective rather than only a theory-first view."
@@ -138,7 +172,13 @@
     "title": "Python Virtual Classroom",
     "date": "2020-08-07",
     "venue": "EAGE NGYP",
-    "location": "",
+    "location": "Lagos, Nigeria (Virtual)",
+    "map": {
+      "label": "Lagos, Nigeria",
+      "lat": 6.5244,
+      "lng": 3.3792,
+      "mode": "virtual"
+    },
     "summary": "Python-focused teaching session supporting technical upskilling and practical programming.",
     "memories": [
       "Built around accessibility for learners who wanted to move from theory into hands-on scripting."

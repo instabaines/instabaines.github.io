@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Talk Map | Ridwan Amure</title>
+    <meta
+      name="description"
+      content="Interactive map of talks, workshops, and speaking activity by Ridwan Amure."
+    />
+    <link rel="icon" href="/images/favicon-32x32.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
+    <link rel="stylesheet" href="/assets/css/site.css" />
+    <script
+      defer
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+    ></script>
+    <script defer src="/assets/js/talk-map.js"></script>
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="site-header">
+        <a class="brand" href="/">Ridwan Amure</a>
+        <nav class="site-nav" aria-label="Primary">
+          <a href="/">Home</a>
+          <a href="/about/">About</a>
+          <a href="/cv/">CV</a>
+          <a href="/research/">Research</a>
+          <a class="is-active" href="/talks/">Talks</a>
+          <a href="/writing/">Writing</a>
+          <a href="/tools/">Tools</a>
+        </nav>
+      </header>
+
+      <main>
+        <section class="page-hero">
+          <p class="eyebrow">Talk Map</p>
+          <h1>Speaking activity across workshops, conferences, and technical sessions.</h1>
+          <p class="lead">
+            A visual view of talks delivered across in-person and virtual events.
+          </p>
+        </section>
+
+        <section class="talk-map-layout">
+          <article class="panel talk-map-panel">
+            <div class="section-heading compact-heading">
+              <div>
+                <p class="eyebrow">Interactive View</p>
+                <h2>Speaking activity map</h2>
+              </div>
+            </div>
+            <div id="talk-map" class="talk-map-canvas" aria-label="Interactive talk map"></div>
+          </article>
+
+          <aside class="talk-map-sidebar">
+            <article class="panel">
+              <div class="section-heading compact-heading">
+                <div>
+                  <p class="eyebrow">Mapped Talks</p>
+                  <h2>Locations in view</h2>
+                </div>
+              </div>
+              <div class="talk-map-list" id="talk-map-list"></div>
+            </article>
+          </aside>
+        </section>
+      </main>
+
+      <footer class="site-footer"></footer>
+    </div>
+  </body>
+</html>
