@@ -84,7 +84,8 @@
       "gallery": [
         "assets/talks/agent-nsbe-2026/img1.jpg",
         "assets/talks/agent-nsbe-2026/img2.jpg",
-        "assets/talks/agent-nsbe-2026/img3.jpg"
+        "assets/talks/agent-nsbe-2026/img3.jpg",
+        "assets/talks/agent-nsbe-2026/img4.jpg"
       ]
     },
     "tags": ["Agent", "Agentic AI", "LLMs", "Production AI", "Applied ML"]
