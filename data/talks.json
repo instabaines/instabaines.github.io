@@ -80,11 +80,11 @@
       { "label": "Talk map entry", "url": "/talkmap/" }
     ],
     "assets": {
-      "heroImage": "assets/talks/rag-systems-nsbe-2025/hero.png",
+      "heroImage": "assets/talks/agent-nsbe-2026/hero.png",
       "gallery": [
-        "assets/talks/rag-systems-nsbe-2025/img1.jpg",
-        "assets/talks/rag-systems-nsbe-2025/img2.png",
-        "assets/talks/rag-systems-nsbe-2025/img3.png"
+        "assets/talks/agent-nsbe-2026/img1.jpg",
+        "assets/talks/agent-nsbe-2026/img2.jpg",
+        "assets/talks/agent-nsbe-2026/img3.jpg"
       ]
     },
     "tags": ["Agent", "Agentic AI", "LLMs", "Production AI", "Applied ML"]
