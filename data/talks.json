@@ -1,62 +1,5 @@
 [
   {
-    "slug": "aisoc-2025",
-    "title": "Machine Learning Regression and Building Large Language Models from scratch",
-    "date": "2025-09-17",
-    "venue": "AI Summer of Code 2025",
-    "location": "Lagos, Nigeria (Virtual)",
-    "map": {
-      "label": "Lagos, Nigeria",
-      "lat": 6.5244,
-      "lng": 3.3792,
-      "mode": "virtual"
-    },
-    "summary": "Exploring Different Regression Methods and Building Large Language Models from scratch.",
-    "memories": [
-      "Show Learners how to build a large language model from scratch and understand the underlying regression methods.",
-      "Engaged with a curious audience about how different regression techniques can be applied in machine learning",
-      "Implement different regression methods from scracth with maths and code to show how they work and their tradeoffs."
-    ],
-    "links": [
-      { "label": "LLM from scratch session Code", "url": "/files/LLM_from_scratch_session.html" },
-      { "label": "ML Regression Session Code", "url": "/files/ML_Regression_Session.html" },
-      { "label": "Talk map entry", "url": "/talkmap/" }
-    ],
-    "assets": {
-      "heroImage": "assets/talks/aisoc-2025/hero.svg",
-      "gallery": []
-    },
-    "tags": ["Mathematics", "Machine Learning", "AI Foundations", "Education"]
-  },
-  {
-    "slug": "aisoc-2024",
-    "title": "Mathematical Foundations of AI",
-    "date": "2024-02-09",
-    "venue": "AI Summer of Code 2024",
-    "location": "Lagos, Nigeria (Virtual)",
-    "map": {
-      "label": "Lagos, Nigeria",
-      "lat": 6.5244,
-      "lng": 3.3792,
-      "mode": "virtual"
-    },
-    "summary": "Exploring the mathematical underpinnings of AI systems and their implications for design and evaluation.",
-    "memories": [
-      "Expose learnrs to the mathematical foundations of Machine learning and AI systems.",
-      "Explained the importance of mathematical intuition for understanding AI systems beyond just coding and engineering.",
-      "Engaged with a curious audience about how mathematical concepts can inform better ML algorithm design and evaluation."
-    ],
-    "links": [
-      { "label": "Slides", "url": "files/Mathematical Foundations of AI.pdf" },
-      { "label": "Talk map entry", "url": "/talkmap/" }
-    ],
-    "assets": {
-      "heroImage": "assets/talks/aisoc-2024/hero.png",
-      "gallery": []
-    },
-    "tags": ["Mathematics", "Machine Learning", "AI Foundations", "Education"]
-  },
-  {
     "slug": "agent-nsbe-2026",
     "title": "Agents at Work - Accelerating and Innovating Business Processes with AI Agents",
     "date": "2026-03-20",
@@ -144,6 +87,63 @@
       "gallery": []
     },
     "tags": ["Workshop", "Modeling", "Computation"]
+  },
+  {
+    "slug": "aisoc-2025",
+    "title": "Machine Learning Regression and Building Large Language Models from scratch",
+    "date": "2025-09-17",
+    "venue": "AI Summer of Code 2025",
+    "location": "Lagos, Nigeria (Virtual)",
+    "map": {
+      "label": "Lagos, Nigeria",
+      "lat": 6.5244,
+      "lng": 3.3792,
+      "mode": "virtual"
+    },
+    "summary": "Exploring Different Regression Methods and Building Large Language Models from scratch.",
+    "memories": [
+      "Show Learners how to build a large language model from scratch and understand the underlying regression methods.",
+      "Engaged with a curious audience about how different regression techniques can be applied in machine learning",
+      "Implement different regression methods from scracth with maths and code to show how they work and their tradeoffs."
+    ],
+    "links": [
+      { "label": "LLM from scratch session Code", "url": "/files/LLM_from_scratch_session.html" },
+      { "label": "ML Regression Session Code", "url": "/files/ML_Regression_Session.html" },
+      { "label": "Talk map entry", "url": "/talkmap/" }
+    ],
+    "assets": {
+      "heroImage": "assets/talks/aisoc-2025/hero.svg",
+      "gallery": []
+    },
+    "tags": ["Mathematics", "Machine Learning", "AI Foundations", "Education"]
+  },
+  {
+    "slug": "aisoc-2024",
+    "title": "Mathematical Foundations of AI",
+    "date": "2024-02-09",
+    "venue": "AI Summer of Code 2024",
+    "location": "Lagos, Nigeria (Virtual)",
+    "map": {
+      "label": "Lagos, Nigeria",
+      "lat": 6.5244,
+      "lng": 3.3792,
+      "mode": "virtual"
+    },
+    "summary": "Exploring the mathematical underpinnings of AI systems and their implications for design and evaluation.",
+    "memories": [
+      "Expose learnrs to the mathematical foundations of Machine learning and AI systems.",
+      "Explained the importance of mathematical intuition for understanding AI systems beyond just coding and engineering.",
+      "Engaged with a curious audience about how mathematical concepts can inform better ML algorithm design and evaluation."
+    ],
+    "links": [
+      { "label": "Slides", "url": "files/Mathematical Foundations of AI.pdf" },
+      { "label": "Talk map entry", "url": "/talkmap/" }
+    ],
+    "assets": {
+      "heroImage": "assets/talks/aisoc-2024/hero.png",
+      "gallery": []
+    },
+    "tags": ["Mathematics", "Machine Learning", "AI Foundations", "Education"]
   },
   {
     "slug": "data-science-ml-for-engineers-2021",
