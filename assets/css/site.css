@@ -56,6 +56,8 @@ img {
 
 .site-header {
   display: flex;
+  position: relative;
+  z-index: 50;
   align-items: center;
   justify-content: space-between;
   gap: 24px;
@@ -80,20 +82,70 @@ img {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
+  align-items: center;
 }
 
-.site-nav a {
+.site-nav a,
+.nav-summary {
   padding: 10px 14px;
   border-radius: 999px;
   text-decoration: none;
   color: var(--muted);
   font-weight: 700;
+  cursor: pointer;
+  border: 0;
+  background: transparent;
 }
 
 .site-nav a:hover,
-.site-nav a.is-active {
+.site-nav a.is-active,
+.nav-summary:hover,
+.nav-summary.is-active {
   color: var(--surface-strong);
   background: linear-gradient(135deg, var(--brand), #b7562c);
+}
+
+.nav-menu {
+  position: relative;
+}
+
+.nav-menu summary {
+  list-style: none;
+}
+
+.nav-menu summary::-webkit-details-marker {
+  display: none;
+}
+
+.nav-summary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-summary::before {
+  content: "\2261";
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.nav-menu-panel {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 10px);
+  min-width: 200px;
+  padding: 10px;
+  display: grid;
+  gap: 6px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: rgba(255, 253, 249, 0.96);
+  box-shadow: var(--shadow);
+  z-index: 80;
+}
+
+.nav-menu-panel a {
+  text-align: left;
 }
 
 main {
@@ -538,6 +590,34 @@ main {
   font-weight: 700;
 }
 
+.theme-chip {
+  padding: 10px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: rgba(255, 253, 249, 0.84);
+  color: var(--muted);
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 160ms ease, color 160ms ease, border-color 160ms ease, transform 160ms ease;
+}
+
+.theme-chip:hover {
+  transform: translateY(-1px);
+  border-color: rgba(47, 45, 42, 0.24);
+  color: var(--text);
+}
+
+.theme-chip.is-active {
+  background: linear-gradient(135deg, var(--brand), #4a453f);
+  border-color: transparent;
+  color: var(--surface-strong);
+}
+
+.publication-theme-row {
+  margin-top: 6px;
+}
+
 .contact-panel {
   background:
     radial-gradient(circle at right center, rgba(29, 107, 103, 0.12), transparent 25%),
@@ -854,6 +934,12 @@ main {
 
   .site-nav {
     justify-content: center;
+  }
+
+  .nav-menu-panel {
+    right: auto;
+    left: 50%;
+    transform: translateX(-50%);
   }
 
   .hero-card img {

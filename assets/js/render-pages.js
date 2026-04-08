@@ -6,7 +6,8 @@
   let publicationFilters = {
     year: "",
     type: "",
-    search: ""
+    search: "",
+    theme: ""
   };
 
   if (!data) {
@@ -78,7 +79,18 @@
     if (!target) return;
 
     target.innerHTML = data.researchThemes
-      .map((theme) => `<span>${escapeHtml(theme)}</span>`)
+      .map(
+        (theme) => `
+          <button
+            type="button"
+            class="theme-chip${publicationFilters.theme === theme ? " is-active" : ""}"
+            data-research-theme="${escapeHtml(theme)}"
+            aria-pressed="${publicationFilters.theme === theme ? "true" : "false"}"
+          >
+            ${escapeHtml(theme)}
+          </button>
+        `
+      )
       .join("");
   }
 
@@ -98,6 +110,7 @@
             </div>
             <h2>${item.linkUrl ? `<a href="${escapeHtml(toSiteUrl(item.linkUrl))}" target="_blank" rel="noreferrer">${escapeHtml(item.title)}</a>` : escapeHtml(item.title)}</h2>
             <p>${item.summaryHtml || escapeHtml(item.summary)}</p>
+            ${item.themes && item.themes.length ? `<div class="tag-row publication-theme-row">${item.themes.map((theme) => `<span>${escapeHtml(theme)}</span>`).join("")}</div>` : ""}
             ${item.linkUrl ? `<a href="${escapeHtml(toSiteUrl(item.linkUrl))}" target="_blank" rel="noreferrer">${escapeHtml(item.linkLabel || "Open publication")}</a>` : ""}
           </article>
         `
@@ -310,6 +323,13 @@
     return `https://doi.org/${doi.replace(/^doi:\s*/i, "")}`;
   }
 
+  function publicationThemesFor(fields) {
+    const themeMap = data.publicationThemeMap || {};
+    const entryKey = String(fields.entrykey || "").trim();
+    const themes = Array.isArray(themeMap[entryKey]) ? themeMap[entryKey] : [];
+    return themes.filter((theme) => (data.researchThemes || []).includes(theme));
+  }
+
   function compareText(a, b) {
     return String(a || "").localeCompare(String(b || ""), undefined, { sensitivity: "base" });
   }
@@ -318,12 +338,13 @@
     return items.filter((item) => {
       const matchesYear = !publicationFilters.year || String(item.year || "") === publicationFilters.year;
       const matchesType = !publicationFilters.type || item.typeLabel === publicationFilters.type;
+      const matchesTheme = !publicationFilters.theme || (item.themes || []).includes(publicationFilters.theme);
       const haystack = [item.title, item.venueName, item.publisher, item.summary]
         .join(" ")
         .toLowerCase();
       const matchesSearch = !publicationFilters.search || haystack.includes(publicationFilters.search.toLowerCase());
 
-      return matchesYear && matchesType && matchesSearch;
+      return matchesYear && matchesType && matchesTheme && matchesSearch;
     });
   }
 
@@ -364,6 +385,7 @@
         venueName: publicationVenueName(fields),
         linkLabel: publicationLink(fields) ? "Open publication" : "",
         linkUrl: publicationLink(fields),
+        themes: publicationThemesFor(fields),
         year: Number.parseInt(fields.year || "0", 10) || 0
       }))
       .sort((a, b) => b.year - a.year || a.title.localeCompare(b.title))
@@ -432,13 +454,24 @@
 
     if (clearButton) {
       clearButton.addEventListener("click", () => {
-        publicationFilters = { year: "", type: "", search: "" };
+        publicationFilters = { year: "", type: "", search: "", theme: "" };
         if (yearControl) yearControl.value = "";
         if (typeControl) typeControl.value = "";
         if (searchControl) searchControl.value = "";
+        renderThemes();
         renderPublications();
       });
     }
+
+    document.addEventListener("click", (event) => {
+      const button = event.target.closest("[data-research-theme]");
+      if (!button) return;
+
+      const selectedTheme = button.getAttribute("data-research-theme") || "";
+      publicationFilters.theme = publicationFilters.theme === selectedTheme ? "" : selectedTheme;
+      renderThemes();
+      renderPublications();
+    });
   }
 
   async function loadBibPublications() {

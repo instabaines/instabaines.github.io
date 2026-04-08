@@ -89,6 +89,100 @@
     "Agentic AI",
     "Applied AI"
   ],
+  "publicationThemeMap": {
+    "akinnubi2023identifying": [
+      "Graph Mining",
+      "Knowledge Graphs",
+      "Computational Social Science"
+    ],
+    "amure2021lithology": [
+      "Applied AI"
+    ],
+    "akinnubi2024kg": [
+      "Knowledge Graphs",
+      "Graph Mining",
+      "Computational Social Science"
+    ],
+    "shajari2024analyzing": [
+      "YouTube Behavior Analysis",
+      "Computational Social Science"
+    ],
+    "amure2024toward": [
+      "Applied AI",
+      "Representation Learning"
+    ],
+    "shajari2024detecting": [
+      "YouTube Behavior Analysis",
+      "Computational Social Science",
+      "Applied AI"
+    ],
+    "shajari2024navigating": [
+      "YouTube Behavior Analysis",
+      "Computational Social Science"
+    ],
+    "amure2025comparative": [
+      "Computational Social Science",
+      "Graph Mining"
+    ],
+    "amure2025kgtemplates": [
+      "Narrative Diffusion",
+      "Knowledge Graphs",
+      "Computational Social Science"
+    ],
+    "amure2025wordlevel": [
+      "Computational Social Science",
+      "Narrative Diffusion"
+    ],
+    "amure2024anomalous": [
+      "YouTube Behavior Analysis",
+      "Applied AI"
+    ],
+    "amure2025co": [
+      "YouTube Behavior Analysis",
+      "Computational Social Science",
+      "Applied AI"
+    ],
+    "nan2025memory": [
+      "Representation Learning",
+      "Applied AI"
+    ],
+    "amureevaluating": [
+      "YouTube Behavior Analysis",
+      "Applied AI"
+    ],
+    "amure2025multiplex": [
+      "Narrative Diffusion",
+      "Computational Social Science"
+    ],
+    "amure2026analysis": [
+      "Narrative Diffusion",
+      "Graph Mining",
+      "Computational Social Science"
+    ],
+    "amure2026exposure": [
+      "Narrative Diffusion",
+      "Computational Social Science"
+    ],
+    "amure2026discovering": [
+      "Graph Mining",
+      "Narrative Diffusion",
+      "Computational Social Science"
+    ],
+    "amure2025graph": [
+      "Knowledge Graphs",
+      "Narrative Diffusion",
+      "Computational Social Science"
+    ],
+    "amure2026identifying": [
+      "Graph Mining",
+      "Narrative Diffusion",
+      "Computational Social Science"
+    ],
+    "amure2025cifsa": [
+      "Graph Mining",
+      "Computational Social Science"
+    ]
+  },
   "tools": [
     {
       "kicker": "Graph Mining",
