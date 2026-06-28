@@ -1,0 +1,16 @@
+{
+  "articles": [
+    {
+      "slug": "the-0-point-1-conspiracy",
+      "path": "/content/notes/article-1.md"
+    },
+    {
+      "slug": "the-geometry-of-growth",
+      "path": "/content/notes/article-2.md"
+    },
+    {
+      "slug": "behind-the-code",
+      "path": "/content/notes/article-3.md"
+    }
+  ]
+}

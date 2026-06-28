@@ -2,6 +2,8 @@
   let data = null;
   let talks = [];
   let writing = { platforms: [], featured: [] };
+  let notes = [];
+  let noteBodies = {};
   let publicationSortKey = "date";
   let publicationFilters = {
     year: "",
@@ -33,6 +35,145 @@
 
   function renderList(items) {
     return items.map((item) => `<li>${escapeHtml(item)}</li>`).join("");
+  }
+
+  function formatNoteDate(value) {
+    if (!value) return "";
+    const date = new Date(`${value}T00:00:00`);
+    if (Number.isNaN(date.getTime())) return value;
+    return date.toLocaleDateString("en-US", {
+      year: "numeric",
+      month: "long",
+      day: "numeric"
+    });
+  }
+
+  function parseNoteMarkdown(text) {
+    const source = String(text || "").replace(/\r\n/g, "\n");
+    const meta = { title: "", date: "", summary: "" };
+    const lines = source.split("\n");
+    let bodyStart = 0;
+
+    for (let i = 0; i < lines.length; i += 1) {
+      const line = lines[i].trim();
+      if (!line) continue;
+
+      const titleMatch = line.match(/^Title:\s*(.+)$/i);
+      if (titleMatch) {
+        meta.title = titleMatch[1].trim();
+        bodyStart = i + 1;
+        continue;
+      }
+
+      const dateMatch = line.match(/^Date:\s*(.+)$/i);
+      if (dateMatch) {
+        meta.date = dateMatch[1].trim();
+        bodyStart = i + 1;
+        continue;
+      }
+
+      const summaryMatch = line.match(/^Summary:\s*(.+)$/i);
+      if (summaryMatch) {
+        meta.summary = summaryMatch[1].trim();
+        bodyStart = i + 1;
+        continue;
+      }
+
+      if (/^Text:\s*$/i.test(line)) {
+        bodyStart = i + 1;
+        break;
+      }
+    }
+
+    return {
+      ...meta,
+      body: lines.slice(bodyStart).join("\n").trim()
+    };
+  }
+
+  function renderInlineMarkdown(text) {
+    return escapeHtml(text)
+      .replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>")
+      .replace(/\*(.+?)\*/g, "<em>$1</em>");
+  }
+
+  function markdownToHtml(markdown) {
+    const lines = String(markdown || "").replace(/\r\n/g, "\n").split("\n");
+    const html = [];
+    let paragraph = [];
+    let listItems = [];
+    let orderedItems = [];
+
+    function flushParagraph() {
+      if (!paragraph.length) return;
+      html.push(`<p>${renderInlineMarkdown(paragraph.join(" "))}</p>`);
+      paragraph = [];
+    }
+
+    function flushUnordered() {
+      if (!listItems.length) return;
+      html.push(`<ul class="feature-list compact-list">${listItems.map((item) => `<li>${renderInlineMarkdown(item)}</li>`).join("")}</ul>`);
+      listItems = [];
+    }
+
+    function flushOrdered() {
+      if (!orderedItems.length) return;
+      html.push(`<ol class="feature-list compact-list">${orderedItems.map((item) => `<li>${renderInlineMarkdown(item)}</li>`).join("")}</ol>`);
+      orderedItems = [];
+    }
+
+    lines.forEach((rawLine) => {
+      const line = rawLine.trim();
+
+      if (!line) {
+        flushParagraph();
+        flushUnordered();
+        flushOrdered();
+        return;
+      }
+
+      if (line === "---") {
+        flushParagraph();
+        flushUnordered();
+        flushOrdered();
+        html.push("<hr />");
+        return;
+      }
+
+      const headingMatch = line.match(/^(#{1,3})\s+(.*)$/);
+      if (headingMatch) {
+        flushParagraph();
+        flushUnordered();
+        flushOrdered();
+        const level = Math.min(headingMatch[1].length + 1, 4);
+        html.push(`<h${level}>${renderInlineMarkdown(headingMatch[2])}</h${level}>`);
+        return;
+      }
+
+      const unorderedMatch = line.match(/^[-*]\s+(.*)$/);
+      if (unorderedMatch) {
+        flushParagraph();
+        flushOrdered();
+        listItems.push(unorderedMatch[1]);
+        return;
+      }
+
+      const orderedMatch = line.match(/^\d+\.\s+(.*)$/);
+      if (orderedMatch) {
+        flushParagraph();
+        flushUnordered();
+        orderedItems.push(orderedMatch[1]);
+        return;
+      }
+
+      paragraph.push(line);
+    });
+
+    flushParagraph();
+    flushUnordered();
+    flushOrdered();
+
+    return html.join("");
   }
 
   function renderEducation() {
@@ -556,6 +697,47 @@
     }
   }
 
+  async function loadNotesData() {
+    try {
+      const response = await fetch("/data/notes.json", { cache: "no-cache" });
+      if (!response.ok) {
+        throw new Error(`Unable to load notes data: ${response.status}`);
+      }
+
+      const payload = await response.json();
+      const entries = Array.isArray(payload.articles) ? payload.articles : [];
+      const hydrated = await Promise.all(
+        entries.map(async (entry) => {
+          const articleResponse = await fetch(entry.path, { cache: "no-cache" });
+          if (!articleResponse.ok) {
+            throw new Error(`Unable to load note markdown: ${entry.path}`);
+          }
+
+          const raw = await articleResponse.text();
+          const parsed = parseNoteMarkdown(raw);
+          const note = {
+            slug: entry.slug,
+            path: entry.path,
+            title: parsed.title || entry.title || "Untitled note",
+            date: parsed.date || entry.date || "",
+            summary: parsed.summary || entry.summary || "",
+            body: parsed.body || "",
+            bodyHtml: markdownToHtml(parsed.body || "")
+          };
+
+          noteBodies[note.slug] = note;
+          return note;
+        })
+      );
+
+      notes = hydrated.sort((a, b) => String(b.date || "").localeCompare(String(a.date || "")));
+    } catch (error) {
+      console.warn("Unable to load notes data.", error);
+      notes = [];
+      noteBodies = {};
+    }
+  }
+
   function formatTalkDate(value) {
     if (!value) return "";
     const date = new Date(`${value}T00:00:00`);
@@ -786,17 +968,81 @@
     target.innerHTML = writing.platforms
       .map(
         (item) => `
-          <article class="panel">
+          <article class="writing-link-card">
             <p class="card-kicker">${escapeHtml(item.name)}</p>
-            <h2>${escapeHtml(item.name)}</h2>
+            <h3>${escapeHtml(item.name)}</h3>
             <p>${escapeHtml(item.summary)}</p>
-            <div class="card-actions">
-              <a class="button button-primary" href="${escapeHtml(toSiteUrl(item.url))}" target="_blank" rel="noreferrer">Visit ${escapeHtml(item.name)}</a>
-            </div>
+            <a href="${escapeHtml(toSiteUrl(item.url))}" target="_blank" rel="noreferrer">Visit ${escapeHtml(item.name)}</a>
           </article>
         `
       )
       .join("");
+  }
+
+  function renderNotesList() {
+    const target = document.querySelector("[data-render='notes-list']");
+    if (!target) return;
+
+    if (!notes.length) {
+      target.innerHTML = `
+        <article class="content-card">
+          <h3>No notes yet</h3>
+          <p>Local essays will appear here once they are added to the notes content folder.</p>
+        </article>
+      `;
+      return;
+    }
+
+    target.innerHTML = notes
+      .map(
+        (item) => `
+          <article class="content-card note-card">
+            <p class="card-kicker">${escapeHtml(formatNoteDate(item.date) || "Note")}</p>
+            <h3><a href="/note-detail/?slug=${encodeURIComponent(item.slug)}">${escapeHtml(item.title)}</a></h3>
+            <p>${escapeHtml(item.summary)}</p>
+            <a href="/note-detail/?slug=${encodeURIComponent(item.slug)}">Read note</a>
+          </article>
+        `
+      )
+      .join("");
+  }
+
+  function findNoteBySlug() {
+    const params = new URLSearchParams(window.location.search);
+    const slug = params.get("slug");
+    if (!slug) return null;
+    return noteBodies[slug] || null;
+  }
+
+  function renderNoteDetail() {
+    const target = document.querySelector("[data-render='note-detail']");
+    if (!target) return;
+
+    const note = findNoteBySlug();
+    if (!note) {
+      target.innerHTML = `
+        <section class="panel">
+          <h2>Note not found</h2>
+          <p>The requested note could not be found.</p>
+          <a class="button button-primary" href="/writing/">Back to notes</a>
+        </section>
+      `;
+      return;
+    }
+
+    document.title = `${note.title} | Ridwan Amure`;
+
+    target.innerHTML = `
+      <section class="page-hero note-hero">
+        <p class="eyebrow">Notes</p>
+        <h1>${escapeHtml(note.title)}</h1>
+        <p class="lead">${escapeHtml(note.summary)}</p>
+        <p class="timeline-meta">${escapeHtml(formatNoteDate(note.date))}</p>
+      </section>
+      <article class="panel note-body">
+        ${note.bodyHtml}
+      </article>
+    `;
   }
 
   function renderWritingFeatured() {
@@ -871,7 +1117,26 @@
 
   function renderHomeWriting() {
     const target = document.querySelector("[data-render='home-writing']");
-    if (!target || !Array.isArray(writing.featured)) return;
+    if (!target) return;
+
+    if (notes.length) {
+      target.innerHTML = notes
+        .slice(0, 2)
+        .map(
+          (item) => `
+            <article class="content-card">
+              <p class="card-kicker">${escapeHtml(formatNoteDate(item.date) || "Note")}</p>
+              <h3><a href="/note-detail/?slug=${encodeURIComponent(item.slug)}">${escapeHtml(item.title)}</a></h3>
+              <p>${escapeHtml(item.summary)}</p>
+              <a href="/writing/">Explore notes</a>
+            </article>
+          `
+        )
+        .join("");
+      return;
+    }
+
+    if (!Array.isArray(writing.featured)) return;
 
     target.innerHTML = writing.featured
       .slice(0, 2)
@@ -914,6 +1179,7 @@
     await loadBibPublications();
     await loadTalksData();
     await loadWritingData();
+    await loadNotesData();
     renderProfile();
     renderEducation();
     renderExperience();
@@ -929,6 +1195,8 @@
     renderTools();
     renderWritingPlatforms();
     renderWritingFeatured();
+    renderNotesList();
+    renderNoteDetail();
     renderHomeFeatured();
     renderHomeTools();
     renderHomeWriting();

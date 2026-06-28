@@ -531,6 +531,60 @@ main {
   line-height: 1.6;
 }
 
+.writing-elsewhere {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.writing-link-card {
+  padding: 18px 20px;
+  border-radius: 18px;
+  border: 1px solid var(--line);
+  background: rgba(255, 253, 249, 0.84);
+}
+
+.writing-link-card h3 {
+  margin: 0 0 8px;
+  font-size: 1.25rem;
+}
+
+.writing-link-card p {
+  margin: 0 0 12px;
+}
+
+.note-card {
+  min-height: 220px;
+}
+
+.note-hero .timeline-meta {
+  margin: 0;
+}
+
+.note-body {
+  display: grid;
+  gap: 18px;
+}
+
+.note-body h2,
+.note-body h3,
+.note-body h4 {
+  margin: 10px 0 0;
+}
+
+.note-body p,
+.note-body ul,
+.note-body ol {
+  margin: 0;
+}
+
+.note-body hr {
+  width: 100%;
+  border: 0;
+  border-top: 1px solid var(--line);
+  margin: 8px 0;
+}
+
 .tag-row span {
   padding: 10px 14px;
   border-radius: 999px;
@@ -868,6 +922,7 @@ main {
   .section-grid,
   .card-grid,
   .tool-strip,
+  .writing-elsewhere,
   .two-column,
   .talk-detail-grid,
   .talk-detail-hero,
