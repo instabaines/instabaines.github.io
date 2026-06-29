@@ -1,16 +1,17 @@
 :root {
-  --bg: #edf1f5;
-  --surface: rgba(248, 250, 252, 0.88);
-  --surface-strong: #fcfdff;
+  --bg: #f5f4f0;
+  --surface: rgba(250, 249, 246, 0.92);
+  --surface-strong: #fdfcfa;
   --text: #1c2530;
   --muted: #5b6673;
-  --line: rgba(80, 92, 108, 0.16);
+  --line: rgba(80, 92, 108, 0.22);
   --brand: #223346;
   --brand-dark: #172433;
   --brand-soft: #d9e2eb;
   --accent: #607991;
   --accent-soft: #dde6ef;
-  --shadow: 0 10px 24px rgba(20, 29, 41, 0.06);
+  --accent-warm: #b07a3e;
+  --shadow: 0 10px 24px rgba(20, 29, 41, 0.09);
   --radius-xl: 22px;
   --radius-lg: 16px;
   --max-width: 1160px;
@@ -33,9 +34,9 @@ body {
   font-size: 17px;
   color: var(--text);
   background:
-    radial-gradient(circle at 10% 10%, rgba(96, 121, 145, 0.04), transparent 24%),
-    radial-gradient(circle at 86% 14%, rgba(148, 163, 184, 0.05), transparent 22%),
-    linear-gradient(180deg, #f7f9fb 0%, #eef2f6 100%);
+    radial-gradient(circle at 10% 10%, rgba(176, 122, 62, 0.03), transparent 24%),
+    radial-gradient(circle at 86% 14%, rgba(96, 121, 145, 0.04), transparent 22%),
+    linear-gradient(180deg, #f8f7f3 0%, #f2f1ec 100%);
 }
 
 a {
@@ -70,11 +71,11 @@ img {
 }
 
 .brand {
-  font-family: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
-  font-size: 1.18rem;
+  font-family: "Fraunces", "Iowan Old Style", Georgia, serif;
+  font-size: 1.28rem;
   font-weight: 700;
   text-decoration: none;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.01em;
 }
 
 .site-nav {
@@ -93,8 +94,8 @@ img {
 
 .site-nav a:hover,
 .site-nav a.is-active {
-  color: var(--surface-strong);
-  background: linear-gradient(135deg, var(--brand), #41566d);
+  color: #fff;
+  background: linear-gradient(135deg, var(--brand), #3a566e);
 }
 
 main {
@@ -117,16 +118,31 @@ main {
   display: grid;
   grid-template-columns: minmax(0, 1.25fr) minmax(320px, 0.75fr);
   gap: 24px;
-  padding: 34px;
-  background: linear-gradient(180deg, rgba(252, 253, 254, 0.98), rgba(244, 247, 250, 0.94));
+  padding: 40px;
+  background: linear-gradient(160deg, rgba(253, 252, 249, 0.99), rgba(244, 242, 237, 0.96));
   border-radius: var(--radius-xl);
   overflow: hidden;
   position: relative;
 }
 
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(34, 51, 70, 0.035) 1px, transparent 1px);
+  background-size: 28px 28px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero > * {
+  position: relative;
+  z-index: 1;
+}
+
 .page-hero {
-  padding: 32px 34px;
-  background: linear-gradient(180deg, rgba(252, 253, 254, 0.98), rgba(244, 247, 250, 0.94));
+  padding: 40px 44px;
+  background: linear-gradient(160deg, rgba(253, 252, 249, 0.99), rgba(244, 242, 237, 0.96));
   border-radius: var(--radius-xl);
 }
 
@@ -147,9 +163,11 @@ main {
 
 .hero h1,
 .page-hero h1 {
-  font-size: clamp(2rem, 3vw, 3.2rem);
+  font-family: "Fraunces", Georgia, serif;
+  font-size: clamp(2.4rem, 3.5vw, 3.8rem);
   max-width: 14ch;
-  letter-spacing: -0.025em;
+  letter-spacing: -0.03em;
+  line-height: 1.0;
 }
 
 .lead {
@@ -172,7 +190,7 @@ main {
 .eyebrow,
 .card-kicker,
 .stat-label {
-  color: var(--brand);
+  color: var(--accent-warm);
 }
 
 .timeline-meta {
@@ -260,16 +278,25 @@ main {
   background: linear-gradient(135deg, var(--brand), #3d556c);
   color: #fff;
   box-shadow: 0 8px 18px rgba(34, 51, 70, 0.14);
+  transition: background 200ms ease, box-shadow 200ms ease, transform 160ms ease;
 }
 
 .button-primary:hover {
-  background: var(--brand-dark);
+  background: linear-gradient(135deg, #1c2c3d, #334e66);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(34, 51, 70, 0.22);
 }
 
 .button-secondary {
-  background: rgba(247, 249, 252, 0.88);
+  background: rgba(252, 251, 248, 0.92);
   color: var(--text);
   border: 1px solid var(--line);
+  transition: background 200ms ease, border-color 200ms ease;
+}
+
+.button-secondary:hover {
+  background: rgba(34, 51, 70, 0.05);
+  border-color: rgba(34, 51, 70, 0.2);
 }
 
 .inline-links {
@@ -332,8 +359,17 @@ main {
 .timeline-item {
   padding: 28px;
   border-radius: var(--radius-lg);
-  background: rgba(250, 252, 253, 0.92);
+  background: rgba(252, 251, 248, 0.94);
   backdrop-filter: blur(10px);
+  transition: box-shadow 200ms ease, transform 200ms ease, border-color 200ms ease;
+}
+
+.panel:hover,
+.content-card:hover,
+.publication-item:hover {
+  box-shadow: 0 16px 36px rgba(20, 29, 41, 0.12);
+  transform: translateY(-2px);
+  border-color: rgba(80, 92, 108, 0.32);
 }
 
 .accent-panel {
@@ -358,7 +394,20 @@ main {
 }
 
 .section-heading h2 {
-  font-size: clamp(1.7rem, 2vw, 2.35rem);
+  font-size: clamp(1.9rem, 2.2vw, 2.6rem);
+  position: relative;
+  padding-bottom: 14px;
+}
+
+.section-heading h2::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 32px;
+  height: 2px;
+  background: var(--accent-warm);
+  border-radius: 2px;
 }
 
 .feature-list {
@@ -971,6 +1020,33 @@ main {
   margin: 0 0 6px;
 }
 
+@keyframes fadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero {
+  animation: fadeSlideUp 420ms ease both;
+}
+
+.page-hero {
+  animation: fadeSlideUp 420ms ease both;
+}
+
+.section-heading {
+  animation: fadeSlideUp 420ms 60ms ease both;
+}
+
+.overview-grid > *:nth-child(1) { animation: fadeSlideUp 380ms 0ms ease both; }
+.overview-grid > *:nth-child(2) { animation: fadeSlideUp 380ms 80ms ease both; }
+.overview-grid > *:nth-child(3) { animation: fadeSlideUp 380ms 160ms ease both; }
+
 .site-footer {
   padding: 24px 0 0;
 }
@@ -980,9 +1056,9 @@ main {
   align-items: center;
   justify-content: space-between;
   gap: 16px;
-  padding: 14px 18px;
+  padding: 16px 22px;
   border-radius: 14px;
-  background: #18222d;
+  background: linear-gradient(135deg, #141e2a, #1c2a3a);
   color: rgba(232, 238, 244, 0.92);
 }
 
