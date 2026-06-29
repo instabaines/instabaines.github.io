@@ -16,7 +16,17 @@
   "experience": [
     {
       "company": "Meta",
-      "rolePeriod": "Software Engineering Intern, Machine Learning - May 2025 to August 2025",
+      "rolePeriod": "Machine Learning Intern - 2026",
+      "bullets": [
+        "Improving the state-of-the-art early-stage ranking model for Product Ads.",
+        "Working on product quantization and target-aware attention for recommendation quality and retrieval efficiency.",
+        "Advancing ranking model quality for large-scale ads recommendation systems in production.",
+        "Contributing to model and system improvements for state-of-the-art ESR performance."
+      ]
+    },
+    {
+      "company": "Meta",
+      "rolePeriod": "Software Engineering Intern, Machine Learning - 2025",
       "bullets": [
         "Built end-to-end ML pipeline reducing training data latency from 14 days to 1 day, enabling near real-time model iteration and deployment.",
         "Improved large-scale ranking systems via feature engineering, feature ablation, and integration of new high-impact signals.",
