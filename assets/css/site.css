@@ -161,13 +161,20 @@ main {
   line-height: 1.02;
 }
 
-.hero h1,
-.page-hero h1 {
+.hero h1 {
   font-family: "Fraunces", Georgia, serif;
   font-size: clamp(2.4rem, 3.5vw, 3.8rem);
   max-width: 14ch;
   letter-spacing: -0.03em;
   line-height: 1.0;
+}
+
+.page-hero h1 {
+  font-family: "Fraunces", Georgia, serif;
+  font-size: clamp(2rem, 2.8vw, 3rem);
+  max-width: 18ch;
+  letter-spacing: -0.025em;
+  line-height: 1.05;
 }
 
 .lead {
