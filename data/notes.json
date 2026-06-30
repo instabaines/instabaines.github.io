@@ -11,6 +11,10 @@
     {
       "slug": "behind-the-code",
       "path": "/content/notes/article-3.md"
+    },
+    {
+      "slug": "engineering-normal",
+      "path": "/content/notes/article-4.md"
     }
   ]
 }
