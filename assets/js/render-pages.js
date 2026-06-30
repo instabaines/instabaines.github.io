@@ -103,6 +103,8 @@
     let paragraph = [];
     let listItems = [];
     let orderedItems = [];
+    let inCodeBlock = false;
+    let codeLines = [];
 
     function flushParagraph() {
       if (!paragraph.length) return;
@@ -122,8 +124,36 @@
       orderedItems = [];
     }
 
+    function flushCode() {
+      if (!codeLines.length) return;
+      const escaped = codeLines.join("\n")
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;");
+      html.push(`<pre><code>${escaped}</code></pre>`);
+      codeLines = [];
+    }
+
     lines.forEach((rawLine) => {
       const line = rawLine.trim();
+
+      if (line.startsWith("```")) {
+        if (inCodeBlock) {
+          flushCode();
+          inCodeBlock = false;
+        } else {
+          flushParagraph();
+          flushUnordered();
+          flushOrdered();
+          inCodeBlock = true;
+        }
+        return;
+      }
+
+      if (inCodeBlock) {
+        codeLines.push(rawLine);
+        return;
+      }
 
       if (!line) {
         flushParagraph();
@@ -172,6 +202,7 @@
     flushParagraph();
     flushUnordered();
     flushOrdered();
+    if (inCodeBlock) flushCode();
 
     return html.join("");
   }

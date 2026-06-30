@@ -1,4 +1,4 @@
-Title: The 0.1% Conspiracy: Why Modern Advertisements Are Terrified of Perfection
+﻿Title: The 0.1% Conspiracy: Why Modern Advertisements Are Terrified of Perfection
 Date: 2026-06-28
 Summary: The "99.9% germ-killing" claim is a legal, biological, and regulatory compromise designed to avoid the impossible burden of promising perfection.
 
@@ -61,6 +61,6 @@ The missing 0.1% is not a rounding error. It is the point where marketing, biolo
 ### References
 
 1. **Environmental Protection Agency (EPA):** *Product Performance Test Guidelines: OCSPP 810.2200 - Disinfectants for Use on Hard Surfaces*.
-2. **Federal Insecticide, Fungicide, and Rodenticide Act (FIFRA):** 7 U.S.C. � 136 et seq.
+2. **Federal Insecticide, Fungicide, and Rodenticide Act (FIFRA):** 7 U.S.C. § 136 et seq.
 3. **Federal Trade Commission (FTC):** *Policy Statement on Deception* (103 F.T.C. 110).
-4. **Rutala, W. A., & Weber, D. J. (2019):** *Guideline for Disinfection and Sterilization in Healthcare Facilities*.
+4. **Rutala, W. A., & Weber, D. J. (2008, Updated 2019):** *Guideline for Disinfection and Sterilization in Healthcare Facilities*.

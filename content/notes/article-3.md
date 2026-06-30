@@ -96,3 +96,14 @@ Malicious smart contracts do not usually announce themselves. They hide inside p
 That is what makes them dangerous. The exploit is often not a visible anomaly but a valid execution path embedded in ordinary-looking architecture.
 
 In Web3, intent is irrelevant. If the path exists, the chain will execute it.
+
+---
+
+### References
+
+1. **Ethereum Improvement Proposal 1967 (EIP-1967).** *Standard Proxy Storage Slots.* Ethereum Foundation. [eips.ethereum.org/EIPS/eip-1967](https://eips.ethereum.org/EIPS/eip-1967)
+2. **OpenZeppelin. (2023).** *Proxy Upgrade Pattern.* OpenZeppelin Docs. [docs.openzeppelin.com/upgrades-plugins/proxies](https://docs.openzeppelin.com/upgrades-plugins/1.x/proxies)
+3. **Solidity Documentation. (2024).** *Layout of State Variables in Storage.* Solidity Language Reference. [docs.soliditylang.org](https://docs.soliditylang.org/en/latest/internals/layout_in_storage.html)
+4. **Ethereum Foundation. (2015).** *Ethereum Yellow Paper: A Formal Specification of Ethereum.* Dr. Gavin Wood. [ethereum.github.io/yellowpaper](https://ethereum.github.io/yellowpaper/paper.pdf)
+5. **Consensys Diligence. (2020).** *Ethereum Smart Contract Best Practices — Known Attacks.* [consensys.github.io/smart-contract-best-practices](https://consensys.github.io/smart-contract-best-practices/attacks/)
+6. **Palladino, S. (2019).** *The State of Smart Contract Upgrades.* OpenZeppelin Blog. [blog.openzeppelin.com](https://blog.openzeppelin.com/the-state-of-smart-contract-upgrades)

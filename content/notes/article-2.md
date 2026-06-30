@@ -8,7 +8,7 @@ At first glance, the numbers look irrational. These labs are consuming extraordi
 
 Read only through the income statement, this looks like speculation. But the structure underneath is more deliberate. What we are watching is a financing system built around hyper-growth, infrastructure control, and the expectation that present losses can be justified by future strategic dominance.
 
-```
+```text
 High Valuation -> Public Capital / Debt -> Massive Infrastructure & Talent Inflow -> Market Dominance -> Future Profit Realization
 ```
 
@@ -67,3 +67,14 @@ The frontier AI IPO wave should not be understood as a victory parade for alread
 The central question is not whether these companies are important. It is whether real enterprise utility can scale fast enough to outrun the cost structure required to sustain them.
 
 If the answer is yes, today's valuations may eventually look rational in hindsight. If the answer is no, public markets will not continue to fund the deficit indefinitely.
+
+---
+
+### References
+
+1. **Hoffman, R., & Yeh, C. (2018).** *Blitzscaling: The Lightning-Fast Path to Building Massively Valuable Companies.* Currency/Crown Publishing.
+2. **U.S. Securities and Exchange Commission (SEC).** *Draft Registration Statement (Confidential S-1 Process).* 17 C.F.R. § 230.461. [sec.gov](https://www.sec.gov/info/edgar/draftregistration.htm)
+3. **Damodaran, A. (2024).** *Price-to-Sales Ratios and the Growth Imperative: Valuing Hypergrowth Firms.* Stern School of Business, NYU. [pages.stern.nyu.edu](https://pages.stern.nyu.edu/~adamodar/)
+4. **Fortune. (June 1, 2026).** *Anthropic confidentially files for IPO after raising $65 billion in a funding round at a $965 billion valuation.* [fortune.com](https://fortune.com/2026/06/01/anthropic-confidentially-files-ipo-965-billion-valuation/) — See also: [TechCrunch](https://techcrunch.com/2026/06/01/anthropic-files-to-go-public/) and [CNBC](https://www.cnbc.com/2026/06/01/anthropic-ipo-s1-prospectus.html).
+5. **Fortune. (May 22, 2026).** *The big questions OpenAI's trillion-dollar IPO filing may finally answer.* [fortune.com](https://fortune.com/2026/05/22/openai-ipo-filing-1-trillion-may-finally-answer-these-big-questions/) — OpenAI filed a confidential S-1 around June 8–9, 2026, targeting a ~$1 trillion valuation. 2025 revenue: $13.07B; Q1 2026 revenue: ~$5.7B.
+6. **Federal Reserve Bank of San Francisco (2023).** *Venture Capital and the Financing of Innovation.* FRBSF Economic Letter. [frbsf.org](https://www.frbsf.org/economic-research/publications/economic-letter/)
