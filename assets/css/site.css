@@ -744,6 +744,26 @@ main {
   margin: 8px 0;
 }
 
+.note-disclaimer {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 16px 20px;
+  border-left: 3px solid rgba(99, 102, 241, 0.4);
+  background: rgba(99, 102, 241, 0.06);
+  border-radius: 0 8px 8px 0;
+}
+
+.note-disclaimer p {
+  margin: 0;
+  font-size: 0.82rem;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+.note-disclaimer strong {
+  color: var(--text);
+}
+
 .note-body pre {
   background: rgba(10, 15, 26, 0.85);
   border: 1px solid rgba(255, 255, 255, 0.08);

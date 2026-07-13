@@ -1075,6 +1075,9 @@
       <article class="panel note-body">
         ${note.bodyHtml}
       </article>
+      <aside class="note-disclaimer">
+        <p><strong>Disclaimer:</strong> The views expressed in this post are my own and do not represent the positions of my employer, institution, or any affiliated organization. I do not claim authority or expertise on the topics discussed, and nothing written here constitutes professional, legal, financial, or academic advice. Readers should not take any content in these notes as authoritative fact and are encouraged to consult primary sources and qualified professionals before acting on any information presented.</p>
+      </aside>
     `;
   }
 
