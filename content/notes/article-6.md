@@ -69,5 +69,5 @@ Until we change the structural laws governing corporate purpose, expecting a CEO
 1. **Stout, L. A. (2012).** *The Shareholder Value Myth.* Berrett-Koehler Publishers.
 2. **Useem, M. (1996).** *Investor Capitalism: How Money Managers Are Changing the Face of Corporate America.* Basic Books. (Documents the mechanics of institutional investor activism and proxy fights.)
 3. **Gravity Payments / Dan Price (2015).** Widely reported; see coverage in *The New York Times* and *Inc. Magazine.* Price v. Price lawsuit: King County Superior Court, Washington State.
-4. **Useem, J. (2019, November).** *The Long Stall.* The Atlantic. (Analysis of Boeing's cultural shift after the McDonnell Douglas merger and the consequences for engineering safety culture.)
+4. **Useem, J. (2019, November 20).** *The Long-Forgotten Flight That Sent Boeing Off Course.* The Atlantic. [theatlantic.com](https://www.theatlantic.com/ideas/archive/2019/11/how-boeing-lost-its-bearings/602188/)
 5. **Lazonick, W. (2014).** *Profits Without Prosperity.* Harvard Business Review. [hbr.org](https://hbr.org/2014/09/profits-without-prosperity)

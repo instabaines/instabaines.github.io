@@ -85,7 +85,7 @@ We are the only species on Earth that pays a premium just to alter our baseline 
 ### References and Further Reading
 
 * **Marchand, Roland (1985).** *Advertising the American Dream: Making Way for Modernity, 1920-1940.* University of California Press. (Details the Listerine "Halitosis Appeal" and the medicalization of social anxiety).
-* **Young, James Webb (1919 / Grokipedia Archive).** *The Odorono Campaign and "Within the Curve of a Woman's Arm."* J. Walter Thompson Archives.
+* **Everts, S. (August 2012).** *How Advertisers Convinced Americans They Smelled Bad.* Smithsonian Magazine. [smithsonianmag.com](https://www.smithsonianmag.com/history/how-advertisers-convinced-americans-they-smelled-bad-12552404/) (Documents the J. Walter Thompson / James Webb Young Odorono campaign and its outcomes.)
 * **Rapaille, Clotaire (2006).** *The Culture Code: An Ingenious Way to Understand Why People Around the World Live and Buy as They Do.* Broadway Books. (Details the 1975 Nestlé Japan case study on childhood imprinting).
 * **Harvard Business Publishing.** *Nestlé KITKAT in Japan (A): Sparking a Cultural Revolution.* (Analysis of Nestlé's localized premiumization strategy in the Japanese market).
 * **Mark & Spark Solutions (2024/2025 Case Study).** *Oatly Oat Milk Case Study: Global Expansion from Europe to U.S.* (Details the 2016 barista-led, urban pull strategy).
