@@ -10,11 +10,35 @@ In a movie, the credits roll and corporate humanity is restored. In the real wor
 
 ## 1. The Shareholder Rebellion
 
-The moment a CEO publicly prioritizes worker retention over short-term earnings maximization, the stock price takes a hit. Wall Street interprets empathy as inefficiency.
+The moment a CEO publicly prioritizes worker retention over short-term earnings maximization, the stock price takes a hit. Wall Street interprets empathy as inefficiency. Institutional investors don't sit on their hands — they deploy a precise set of tools to correct the deviation.
 
-Institutional investors don't sit on their hands. They use a mechanism called a **proxy fight**: asset managers and hedge funds band together to propose their own slate of board directors, launch public campaigns arguing that current management is "destroying value," and push everyday shareholders to vote them out. If the rebels win, the board is replaced. The first order of business for the new board is firing the non-cooperative CEO.
+### The Playbook: Aggressive Cost-Cutting and Restructuring
 
-The market doesn't punish defection with criticism. It punishes it with removal.
+The most common type of activist intervention is purely financial: slash costs, replace leadership, or break up a conglomerate to "unlock hidden value."
+
+**Elliott Management vs. Southwest Airlines (2024):** Elliott built an 11% stake in Southwest and launched a public campaign attacking the airline's technology, operational failures, and leadership. Elliott demanded the removal of CEO Bob Jordan and a full board overhaul. Southwest ultimately negotiated a settlement: six new Elliott-approved directors were added to the board, and the airline fundamentally changed strategy — ending its decades-long open-seating policy and introducing premium cabin seating. Jordan retained his title, but only after yielding significant board control.
+
+**Jana Partners vs. Agrium:** Jana Partners targeted the agricultural giant Agrium, arguing that its dual structure as a wholesaler and retailer was causing it to underperform. They launched a public proxy battle to install their own board members and force the company to split.
+
+### The Leadership Guillotine
+
+When cost-cutting alone isn't enough, activists target the CEO directly. The data makes the stakes clear.
+
+According to Lazard's *Annual Review of Shareholder Activism*, 2025 set an all-time record with **297 public global campaigns** — the third consecutive record year. As a direct result, **32 U.S. CEOs resigned within one year of an activist taking a stake** — a 60% increase over the historical average. When an activist arrives, the CEO's job security collapses.
+
+### The Corporate Raiders of the 1980s
+
+Modern activist investors are the polished descendants of the 1980s "corporate raiders" — figures like Carl Icahn and T. Boone Pickens who operated with far less pretense of long-term value creation.
+
+**Carl Icahn and TWA (1985):** Icahn aggressively bought a majority stake in Trans World Airlines. Once in control, he systematically sold off TWA's most valuable assets — including its lucrative London routes — to pay off the acquisition debt, pocketing hundreds of millions in personal profit. The airline was stripped of its assets, saddled with the debt used to buy it, and eventually went bankrupt. This is the original, undisguised form of capital optimization: extract maximum short-term return, leave the carcass behind.
+
+### The Twist: Activism Can Cut Both Ways
+
+While most shareholder activism is financial optimization, the exact same mechanics can be deployed to force social or environmental change — which proves the point about structure more than it disproves it.
+
+**Engine No. 1 vs. ExxonMobil (2021):** Engine No. 1 was a tiny hedge fund owning roughly 0.02% of ExxonMobil. They built a sophisticated financial case arguing that Exxon's refusal to invest in renewable energy was a long-term threat to its own financial survival — not a moral argument, a fiduciary one. They persuaded BlackRock, Vanguard, State Street, and major pension funds like CalPERS to vote with them. In a stunning upset, Engine No. 1 won **three seats on Exxon's board of directors**, forcing the oil giant to alter its long-term carbon strategy.
+
+The lesson isn't that corporations can be guilted into doing the right thing. The lesson is that the same proxy fight mechanism that fires empathetic CEOs can also be aimed at environmental laggards — but only when the financial case is airtight. The machine responds to the argument that serves capital. Engine No. 1 won because they spoke that language fluently.
 
 ---
 
@@ -60,8 +84,12 @@ The machine doesn't care about their intentions. It only cares about the traject
 
 ### References
 
-1. **Stout, L. A. (2012).** *The Shareholder Value Myth.* Berrett-Koehler Publishers.
-2. **Useem, M. (1996).** *Investor Capitalism: How Money Managers Are Changing the Face of Corporate America.* Basic Books. (Documents the mechanics of institutional investor activism and proxy fights.)
-3. **Gravity Payments / Dan Price (2015).** Widely reported; see coverage in *The New York Times* and *Inc. Magazine.* Price v. Price lawsuit: King County Superior Court, Washington State.
-4. **Useem, J. (2019, November 20).** *The Long-Forgotten Flight That Sent Boeing Off Course.* The Atlantic. [theatlantic.com](https://www.theatlantic.com/ideas/archive/2019/11/how-boeing-lost-its-bearings/602188/)
-5. **Lazonick, W. (2014).** *Profits Without Prosperity.* Harvard Business Review. [hbr.org](https://hbr.org/2014/09/profits-without-prosperity)
+1. **Lazard. (January 5, 2026).** *Annual Review of Shareholder Activism 2025.* [lazard.com](https://www.lazard.com/research-insights/annual-review-of-shareholder-activism-2025/) — 297 global campaigns, third consecutive record year.
+2. **Harvard Law School Forum on Corporate Governance. (January 27, 2026).** *2025 Review of Shareholder Activism.* [corpgov.law.harvard.edu](https://corpgov.law.harvard.edu/2026/01/27/2025-review-of-shareholder-activism/) — 32 U.S. CEO resignations within one year of activist campaign; 60% above historical average.
+3. **CNBC. (October 24, 2024).** *Southwest and activist investor Elliott strike deal to keep CEO Bob Jordan, add six new directors.* [cnbc.com](https://www.cnbc.com/2024/10/24/southwest-elliott-near-settlement-which-would-end-proxy-fight-source-says.html)
+4. **Harvard Business School. (2021).** *Engine No. 1: An Impact Investing Firm Engages with ExxonMobil.* HBS Case Study. [hbs.edu](https://www.hbs.edu/faculty/Pages/item.aspx?num=61337)
+5. **Harvard Law School Forum on Corporate Governance. (July 24, 2021).** *Was the Exxon Fight a Bellwether?* [corpgov.law.harvard.edu](https://corpgov.law.harvard.edu/2021/07/24/was-the-exxon-fight-a-bellwether/)
+6. **Stout, L. A. (2012).** *The Shareholder Value Myth.* Berrett-Koehler Publishers.
+7. **Useem, M. (1996).** *Investor Capitalism: How Money Managers Are Changing the Face of Corporate America.* Basic Books.
+8. **Useem, J. (2019, November 20).** *The Long-Forgotten Flight That Sent Boeing Off Course.* The Atlantic. [theatlantic.com](https://www.theatlantic.com/ideas/archive/2019/11/how-boeing-lost-its-bearings/602188/)
+9. **Lazonick, W. (2014).** *Profits Without Prosperity.* Harvard Business Review. [hbr.org](https://hbr.org/2014/09/profits-without-prosperity)
