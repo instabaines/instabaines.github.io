@@ -4,11 +4,7 @@ Summary: What actually happens when a CEO refuses to follow the shareholder mand
 
 Let's say a CEO decides to play hero. Suppose the head of a major public company looks at a spreadsheet demanding 5,000 layoffs and says: *"No. We are making healthy profits. We are going to protect our people, pay our fair share of taxes, and settle for stable growth instead of hyper-optimization."*
 
-What happens next?
-
-In a movie, the credits roll, the workers cheer, and corporate humanity is restored. In the real world, the machine reacts like a biological organism attacking a foreign virus. The rogue executive is systematically isolated, neutralized, and purged.
-
-Here is exactly how the market handles a CEO who refuses to cooperate.
+In a movie, the credits roll and corporate humanity is restored. In the real world, the machine reacts like a biological organism attacking a foreign virus. The rogue executive is systematically isolated, neutralized, and purged. Here is exactly how.
 
 ---
 
@@ -29,8 +25,8 @@ To understand how deeply the corporate ecosystem rejects non-optimization, look 
 In 2015, Price slashed his own $1 million salary to fund a $70,000 minimum wage for every employee. The public hailed him as a visionary. The corporate establishment reacted with fury.
 
 - Billionaire Ken Langone went on television to call the move "crazy."
-- Wall Street predicted instant bankruptcy. Revenue actually tripled over the next few years.
-- Price's own brother — a minority shareholder — sued him, claiming the wage hike violated his rights as an investor by potentially reducing the value of his stock.
+- Wall Street predicted instant bankruptcy. Revenue tripled over the next few years.
+- Price's own brother, a minority shareholder, sued him — arguing the wage hike violated his rights as an investor by reducing the value of his stock.
 
 The backlash was a structural warning shot to the rest of corporate America: *Do not normalize this. Do not show the working class that the math can work differently.*
 
@@ -58,9 +54,7 @@ When we look at the top of the corporate ladder, we see individuals with immense
 
 A public CEO who refuses to lay off workers during a downturn isn't just making a personal moral choice — they are committing career suicide. They are a pilot trying to steer a commercial airliner against a Category 5 hurricane using nothing but good intentions.
 
-The machine doesn't care about their intentions. It only cares about the trajectory of the line on the chart.
-
-Until we change the structural laws governing corporate purpose, expecting a CEO to act against the market is like expecting a calculator to feel guilty about doing subtraction.
+The machine doesn't care about their intentions. It only cares about the trajectory of the line on the chart. Until we change the structural laws governing corporate purpose, expecting a CEO to act against the market is like expecting a calculator to feel guilty about doing subtraction.
 
 ---
 

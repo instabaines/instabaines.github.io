@@ -721,6 +721,8 @@ main {
   margin-left: auto;
   margin-right: auto;
   width: 100%;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 .note-body h2,

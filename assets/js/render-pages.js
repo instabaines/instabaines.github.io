@@ -92,7 +92,9 @@
   }
 
   function renderInlineMarkdown(text) {
-    return escapeHtml(text)
+    const escaped = escapeHtml(text);
+    return escaped
+      .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noreferrer">$1</a>')
       .replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>")
       .replace(/\*(.+?)\*/g, "<em>$1</em>");
   }
