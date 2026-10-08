@@ -281,6 +281,7 @@
             <div class="publication-meta-row">
               <p class="card-kicker">${escapeHtml(item.kicker)}</p>
               <span class="publication-badge publication-badge-${escapeHtml(item.typeTone || "general")}">${escapeHtml(item.typeLabel || "Publication")}</span>
+              ${item.award ? (item.awardUrl ? `<a class="publication-badge publication-badge-award" href="${escapeHtml(toSiteUrl(item.awardUrl))}" target="_blank" rel="noreferrer">${escapeHtml(item.award)}</a>` : `<span class="publication-badge publication-badge-award">${escapeHtml(item.award)}</span>`) : ""}
             </div>
             <h2>${item.linkUrl ? `<a href="${escapeHtml(toSiteUrl(item.linkUrl))}" target="_blank" rel="noreferrer">${escapeHtml(item.title)}</a>` : escapeHtml(item.title)}</h2>
             <p>${item.summaryHtml || escapeHtml(item.summary)}</p>
@@ -560,6 +561,8 @@
         linkLabel: publicationLink(fields) ? "Open publication" : "",
         linkUrl: publicationLink(fields),
         themes: publicationThemesFor(fields),
+        award: fields.award || "",
+        awardUrl: fields.awardurl || "",
         year: Number.parseInt(fields.year || "0", 10) || 0
       }))
       .sort((a, b) => b.year - a.year || a.title.localeCompare(b.title))

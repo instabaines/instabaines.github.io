@@ -191,6 +191,46 @@
     "amure2025cifsa": [
       "Graph Mining",
       "Computational Social Science"
+    ],
+    "amure2026focal": [
+      "Narrative Diffusion",
+      "Graph Mining",
+      "Computational Social Science"
+    ],
+    "amure2026linguistic": [
+      "Computational Social Science",
+      "Narrative Diffusion"
+    ],
+    "amure2026computational": [
+      "Narrative Diffusion",
+      "Computational Social Science"
+    ],
+    "amure2027narrative": [
+      "Narrative Diffusion",
+      "Computational Social Science"
+    ],
+    "amure2026weighted": [
+      "Graph Mining",
+      "Computational Social Science"
+    ],
+    "amure2026campaign": [
+      "Computational Social Science",
+      "Applied AI"
+    ],
+    "agarwal2026collective": [
+      "Computational Social Science"
+    ],
+    "amure2026forecasting": [
+      "Narrative Diffusion",
+      "Computational Social Science"
+    ],
+    "amure2026multiplexcifsa": [
+      "Graph Mining",
+      "Computational Social Science"
+    ],
+    "amure2026structural": [
+      "Graph Mining",
+      "Computational Social Science"
     ]
   },
   "tools": [

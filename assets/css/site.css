@@ -523,6 +523,11 @@ main {
   background: #7a8797;
 }
 
+.publication-badge-award {
+  background: #a8741a;
+  text-decoration: none;
+}
+
 .publication-controls-row {
   display: flex;
   align-items: flex-start;

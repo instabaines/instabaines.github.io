@@ -1,0 +1,462 @@
+%% Ridwan Amure — Academic CV
+%% Compile with: pdflatex ridwan-amure-cv.tex
+
+\documentclass[11pt, letterpaper]{article}
+
+\usepackage[margin=1in, top=0.85in, bottom=0.85in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{microtype}
+\usepackage{array}
+\usepackage{xcolor}
+\usepackage{parskip}
+
+%% -------------------------------------------------------------------
+%% Typography
+%% -------------------------------------------------------------------
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+
+%% -------------------------------------------------------------------
+%% Colors
+%% -------------------------------------------------------------------
+\definecolor{headingblue}{RGB}{30, 64, 110}
+\definecolor{mutedgray}{RGB}{100, 100, 100}
+\definecolor{rulecolor}{RGB}{180, 180, 180}
+
+%% -------------------------------------------------------------------
+%% Section headings
+%% -------------------------------------------------------------------
+\titleformat{\section}
+  {\large\bfseries\color{headingblue}}
+  {}{0em}{}
+  [\vspace{1pt}\textcolor{rulecolor}{\hrule height 0.6pt}\vspace{4pt}]
+
+\titlespacing{\section}{0pt}{14pt}{6pt}
+
+%% -------------------------------------------------------------------
+%% List settings
+%% -------------------------------------------------------------------
+\setlist[itemize]{
+  leftmargin=1.2em,
+  itemsep=1pt,
+  topsep=3pt,
+  parsep=0pt
+}
+
+%% -------------------------------------------------------------------
+%% Custom commands
+%% -------------------------------------------------------------------
+\newcommand{\cvheading}[2]{%
+  \noindent\textbf{#1} \hfill \textcolor{mutedgray}{\small #2}%
+}
+
+\newcommand{\cvsub}[2]{%
+  \noindent\textit{#1} \hfill \textcolor{mutedgray}{\small #2}%
+}
+
+\newcommand{\pubentry}[1]{%
+  \item #1
+}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=headingblue,
+  urlcolor=headingblue
+}
+
+%% -------------------------------------------------------------------
+\begin{document}
+\pagestyle{empty}
+
+%% ===================================================================
+%% HEADER
+%% ===================================================================
+\begin{center}
+  {\LARGE\bfseries Ridwan Amure}\\[6pt]
+  {\color{mutedgray}
+    Little Rock, Arkansas, United States\\[3pt]
+    \href{mailto:amureridwan002@gmail.com}{amureridwan002@gmail.com}
+    \enspace\textbar\enspace
+    \href{https://ridwanamure.com}{ridwanamure.com}
+    \enspace\textbar\enspace
+    \href{https://linkedin.com/in/ridwan-amure}{linkedin.com/in/ridwan-amure}\\[2pt]
+    \href{https://scholar.google.com/citations?user=pbfF8dQAAAAJ}{Google Scholar}
+    \enspace\textbar\enspace
+    \href{https://github.com/instabaines}{github.com/instabaines}
+    \enspace\textbar\enspace
+    \href{https://orcid.org/0000-0001-5874-5871}{ORCID: 0000-0001-5874-5871}
+  }
+\end{center}
+
+\vspace{4pt}
+
+%% ===================================================================
+%% RESEARCH INTERESTS
+%% ===================================================================
+\section{Research Interests}
+
+Computational Social Science, Network Science, Narrative Diffusion, Graph Mining, Knowledge Graphs, Temporal Modeling, Representation Learning, Large-Scale Machine Learning, Applied AI.
+
+%% ===================================================================
+%% EDUCATION
+%% ===================================================================
+\section{Education}
+
+\cvheading{University of Arkansas at Little Rock}{Little Rock, AR}\\
+\cvsub{Ph.D. in Computer Science}{Expected May 2027}
+\begin{itemize}
+  \item Dissertation: Cross-platform narrative diffusion and collective behavior modeling
+  \item Advisor: Prof.\ Nitin Agarwal (Jerry L.\ Maulden-Entergy Endowed Chair, Director of COSMOS)
+  \item Research Lab: COSMOS — Collaboratorium for Social Media and Online Behavioral Studies
+\end{itemize}
+
+\vspace{6pt}
+
+\cvheading{University of Arkansas at Little Rock}{Little Rock, AR}\\
+\cvsub{M.S. in Computer Science}{May 2025}
+
+%% ===================================================================
+%% RESEARCH EXPERIENCE
+%% ===================================================================
+\section{Research Experience}
+
+\cvheading{Graduate Researcher, COSMOS Research Center}{August 2023 -- Present}\\
+\cvsub{University of Arkansas at Little Rock}{Little Rock, AR}
+\begin{itemize}
+  \item Built COSMOS, a large-scale AI pipeline for cross-platform social media analysis, processing millions of posts across datasets with over 100K users.
+  \item Developed knowledge graph and embedding-based models for narrative tracking and entity representation across platforms.
+  \item Designed ML systems for modeling information diffusion and behavioral dynamics using graph-based and statistical approaches.
+  \item Implemented scalable data pipelines for preprocessing, feature extraction, and modeling on high-dimensional datasets.
+  \item Applied network science and machine learning to extract actionable insights from complex relational data.
+\end{itemize}
+
+%% ===================================================================
+%% INDUSTRY EXPERIENCE
+%% ===================================================================
+\section{Industry Experience}
+
+\cvheading{Meta (Menlo Park, CA)}{Summer 2026}\\
+\cvsub{Machine Learning Intern — Ads Ranking}{}
+\begin{itemize}
+  \item Improving the state-of-the-art early-stage ranking model for Product Ads.
+  \item Working on product quantization and target-aware attention for recommendation quality and retrieval efficiency.
+  \item Advancing ranking model quality for large-scale ads recommendation systems in production.
+\end{itemize}
+
+\vspace{6pt}
+
+\cvheading{Meta (Menlo Park, CA)}{Summer 2025}\\
+\cvsub{Software Engineering Intern, Machine Learning}{}
+\begin{itemize}
+  \item Built end-to-end ML pipeline reducing training data latency from 14 days to 1 day, enabling near real-time model iteration.
+  \item Improved large-scale ranking systems via feature engineering, feature ablation, and integration of new high-impact signals.
+  \item Designed transformer-based interaction architecture for retrieval and ranking systems, optimizing inference-time performance.
+  \item Developed scalable data pipelines supporting training and evaluation of production ML models on large datasets.
+\end{itemize}
+
+\vspace{6pt}
+
+\cvheading{IQuartic (NewWave Company)}{January 2023 -- August 2023}\\
+\cvsub{Senior Machine Learning Engineer}{Remote}
+\begin{itemize}
+  \item Developed end-to-end ML systems for ICD-to-HCC risk adjustment, increasing financial gains by over 30\% through improved coding accuracy.
+  \item Built Bayesian inference models to identify missed or suboptimal medical coding in electronic health records.
+  \item Designed NLP and RAG pipelines for structured extraction and analysis of clinical text data.
+\end{itemize}
+
+\vspace{6pt}
+
+\cvheading{ParallelScore}{September 2021 -- April 2023}\\
+\cvsub{Data Science Engineer}{Remote}
+\begin{itemize}
+  \item Developed transformer-based NLP models for medical coding, improving PHI detection from below 50\% to 95\% in QA and 89\% in production.
+  \item Designed and deployed inference systems using AWS, Docker, and Kubernetes for real-time model serving.
+  \item Conducted model evaluation, error analysis, and performance optimization for production-grade AI systems.
+\end{itemize}
+
+\vspace{6pt}
+
+\cvheading{Babban Gona}{September 2020 -- September 2021}\\
+\cvsub{Machine Learning Engineer}{Lagos, Nigeria}
+\begin{itemize}
+  \item Built computer vision models deployed to over 200,000 users for agricultural diagnostics.
+  \item Developed low-latency inference systems for real-time detection of plant conditions.
+\end{itemize}
+
+%% ===================================================================
+%% PUBLICATIONS
+%% ===================================================================
+\section{Publications}
+
+\textit{* indicates equal contribution. Publications listed in reverse chronological order.}
+
+\vspace{6pt}
+
+\textbf{Journal Articles}
+
+\begin{enumerate}[leftmargin=1.5em, itemsep=5pt, topsep=4pt]
+
+  \pubentry{%
+    \textbf{Amure, R.}, \& Agarwal, N. (2026).
+    Modeling cross-platform narrative diffusion: a stable Hawkes--ODE framework for exposure and adoption dynamics.
+    \textit{Social Network Analysis and Mining}. Springer.
+  }
+
+  \pubentry{%
+    \textbf{Amure, R.}, \& Agarwal, N. (2026).
+    Identifying cohesive narrative formations in cross-platform trade-war discourse using weighted contextual focal structures analysis.
+    \textit{Social Network Analysis and Mining}, 16, 49.
+    \href{https://doi.org/10.1007/s13278-026-01591-7}{doi:10.1007/s13278-026-01591-7}
+  }
+
+  \pubentry{%
+    \textbf{Amure, R.}, \& Agarwal, N. (2026).
+    Discovering cross-platform narrative flow templates using frequent subgraph mining.
+    \textit{Social Network Analysis and Mining}. Springer Vienna.
+    \href{https://link.springer.com/content/pdf/10.1007/s13278-025-01577-x_reference.pdf}{[link]}
+  }
+
+  \pubentry{%
+    \textbf{Amure, R.}, \& Agarwal, N. (2025).
+    Co-commenters as clues: a partial-label approach to detecting anomalous channels on YouTube.
+    \textit{Social Network Analysis and Mining}, 15(1), 80.
+    \href{https://link.springer.com/article/10.1007/s13278-025-01493-0}{[link]}
+  }
+
+  \pubentry{%
+    \textbf{Amure, R.}, \& Agarwal, N. (2025).
+    Modeling cross-platform narrative templates: a temporal knowledge graph approach.
+    \textit{Social Network Analysis and Mining}, 15(1), 42.
+    \href{https://link.springer.com/article/10.1007/s13278-025-01429-8}{[link]}
+  }
+
+  \pubentry{%
+    \textbf{Amure, R.}, \& Agarwal, N. (2025).
+    A comparative evaluation of social network analysis tools: performance and community engagement perspectives.
+    \textit{Social Network Analysis and Mining}, 15(1), 1.
+    \href{https://link.springer.com/article/10.1007/s13278-025-01409-y}{[link]}
+  }
+
+  \pubentry{%
+    Nan, Z., Addai, E., \textbf{Amure, R.}, Bottey, R., Larrey, E.~K., \& Ngungu, M. (2025).
+    Memory-driven modeling of herpes simplex virus type-1 and type-2 dynamics with neural network optimization.
+    \textit{Computer Methods and Programs in Biomedicine}, 109121. Elsevier.
+    \href{https://www.sciencedirect.com/science/article/pii/S0169260725005371}{[link]}
+  }
+
+  \pubentry{%
+    Akinnubi, A., Alassad, M., \textbf{Amure, R.}, \& Agarwal, N. (2024).
+    KG-CFSA: a comprehensive approach for analyzing multi-source heterogeneous social network knowledge graph.
+    \textit{Social Network Analysis and Mining}, 14(1), 159.
+    \href{https://link.springer.com/article/10.1007/s13278-024-01320-y}{[link]}
+  }
+
+  \pubentry{%
+    \textbf{Amure, R.}, Alao, O.~A., \& Falebita, D. (2021).
+    Lithology identification and prediction using clustering algorithms.
+    \textit{NAPE Bulletin}, 30(2), 83--90.
+    \href{https://www.researchgate.net/publication/359617732}{[link]}
+  }
+
+\end{enumerate}
+
+\vspace{8pt}
+\textbf{Conference Papers}
+
+\begin{enumerate}[leftmargin=1.5em, itemsep=5pt, topsep=4pt]
+
+  \pubentry{%
+    \textbf{Amure, R.}, \& Agarwal, N. (2026).
+    Focal Collective Actors as Narrative Structures: Cross-Platform Brokerage in Digital Protest.
+    \textit{Proceedings of the Pacific Asia Conference on Information Systems (PACIS) 2026}.
+  }
+
+  \pubentry{%
+    \textbf{Amure, R.}, \& Agarwal, N. (2026).
+    CI-FSA: Toward Scalable Discovery of Influential Groups in Social Networks.
+    In Cherifi et al.\ (Eds.), \textit{Complex Networks \& Their Applications XIV}, pp.\ 108--119. Springer Nature Switzerland.
+    \href{https://doi.org/10.1007/978-3-032-16645-6_10}{doi:10.1007/978-3-032-16645-6\_10}
+  }
+
+  \pubentry{%
+    \textbf{Amure, R.}, \& Agarwal, N. (2026).
+    Analysis of Cross-Platform Narrative Dissemination Through Contextual Focal Structures.
+    \textit{Social Networks Analysis and Mining (ASONAM) 2025}, 16323, pp.\ 119--127. Springer Nature Switzerland.
+    \href{https://link.springer.com/chapter/10.1007/978-3-032-13821-7_11}{[link]}
+  }
+
+  \pubentry{%
+    \textbf{Amure, R.}, \& Agarwal, N. (2026).
+    Exposure, skepticism, and switching: a behavioral model of narrative diffusion.
+    \textit{Hawaii International Conference on System Sciences (HICSS) 2026}.
+    \href{https://hdl.handle.net/10125/112076}{[link]}
+  }
+
+  \pubentry{%
+    \textbf{Amure, R.}, \& Agarwal, N. (2025).
+    Modeling Word-Level Functions in Social Movement Discourse.
+    \textit{International Conference on Information Systems (ICIS) 2025}.
+    \href{https://aisel.aisnet.org/icis2025/user_behav/user_behav/30/}{[link]}
+  }
+
+  \pubentry{%
+    \textbf{Amure, R.}, \& Agarwal, N. (2025).
+    Graph-based identification of influential groups in cross-platform narrative dissemination.
+    \textit{2025 IEEE International Conference on Knowledge Graph (ICKG)}, pp.\ 9--16. IEEE.
+    \href{https://ieeexplore.ieee.org/abstract/document/11391778/}{[link]}
+  }
+
+  \pubentry{%
+    \textbf{Amure, R.}, \& Agarwal, N. (2025).
+    Evaluating Synthetic Data Generation Methods for Anomalous Channel Detection in Sparse-Label Environments.
+    \textit{18th International Conference on Social Computing, Behavioral-Cultural Modeling, \& Prediction and Behavior Representation in Modeling and Simulation (SBP-BRiMS) 2025}. SBP-BRiMS.
+    \href{https://sbp-brims.org/2025/papers/working-papers/2025_SBP-BRiMS_paper_57.pdf}{[link]}
+  }
+
+  \pubentry{%
+    \textbf{Amure, R.}, \& Agarwal, N. (2025).
+    Modeling Cross-Platform Narrative Diffusion: A Multiplex Approach to Information Spread in Social Media Ecosystems.
+    \textit{International Conference on Advances in Social Networks Analysis and Mining (ASONAM) 2025}, pp.\ 166--173. Springer Nature Switzerland.
+    \href{https://link.springer.com/chapter/10.1007/978-3-032-13513-1_14}{[link]}
+  }
+
+  \pubentry{%
+    \textbf{Amure, R.}, \& Agarwal, N. (2024).
+    Anomalous channel detection for YouTube through label propagation.
+    \textit{International Conference on Complex Networks and Their Applications (CNA) 2024}, pp.\ 271--281. Springer Nature Switzerland.
+    \href{https://link.springer.com/chapter/10.1007/978-3-031-82435-7_22}{[link]}
+  }
+
+  \pubentry{%
+    Shajari, S., \textbf{Amure, R.}, \& Agarwal, N. (2024).
+    Detecting and measuring anomalous behaviors on YouTube.
+    \textit{International Conference on Advances in Social Networks Analysis and Mining (ASONAM) 2024}, pp.\ 3--16. Springer Nature Switzerland.
+    \href{https://link.springer.com/chapter/10.1007/978-3-031-85386-9_1}{[link]}
+  }
+
+  \pubentry{%
+    Shajari, S., \textbf{Amure, R.}, \& Agarwal, N. (2024).
+    Navigating the anomalies: A comprehensive analysis of YouTube channel behavior.
+    \textit{International Conference on Advances in Social Networks Analysis and Mining (ASONAM) 2024}, pp.\ 79--87. Springer Nature Switzerland.
+    \href{https://link.springer.com/chapter/10.1007/978-3-031-85240-4_8}{[link]}
+  }
+
+  \pubentry{%
+    \textbf{Amure, R.}, Akinnubi, A., \& Koleoso, O. (2024).
+    Toward Improved Clustering for Textual Data.
+    \textit{International Conference on Computing and Communication Networks (ICCN) 2024}, pp.\ 405--413. Springer Nature Singapore.
+    \href{https://link.springer.com/chapter/10.1007/978-981-97-0892-5_32}{[link]}
+  }
+
+  \pubentry{%
+    Shajari, S., \textbf{Amure, R.}, \& Agarwal, N. (2024).
+    Analyzing anomalous engagement and commenter behavior on YouTube.
+    \textit{Thirtieth Americas Conference on Information Systems (AMCIS) 2024}.
+    \href{https://aisel.aisnet.org/amcis2024/social_comp/social_comput/6/}{[link]}
+  }
+
+  \pubentry{%
+    Akinnubi, A., Alassad, M., Agarwal, N., \& \textbf{Amure, R.} (2023).
+    Identifying contextualized focal structures in multisource social networks by leveraging knowledge graphs.
+    \textit{International Conference on Complex Networks and Their Applications (CNA) 2023}, pp.\ 15--27. Springer Nature Switzerland.
+    \href{https://link.springer.com/chapter/10.1007/978-3-031-53472-0_2}{[link]}
+  }
+
+\end{enumerate}
+
+%% ===================================================================
+%% TALKS AND PRESENTATIONS
+%% ===================================================================
+\section{Talks and Presentations}
+
+\begin{itemize}
+
+  \item \textbf{Agents at Work: Accelerating and Innovating Business Processes with AI Agents.}\\
+  National Society of Black Engineers (NSBE) Annual Convention, Baltimore, MD. March 2026.
+
+  \item \textbf{Building and Deploying Retrieval-Augmented Generation (RAG) Systems for Quality Business Impact.}\\
+  National Society of Black Engineers (NSBE) Annual Convention, Chicago, IL. March 2025.
+
+  \item \textbf{Machine Learning Regression and Building Large Language Models from Scratch.}\\
+  AI Summer of Code 2025, Lagos, Nigeria (Virtual). September 2025.
+
+  \item \textbf{Mathematical Foundations of AI.}\\
+  AI Summer of Code 2024, Lagos, Nigeria (Virtual). February 2024.
+
+  \item \textbf{Scientific Modelling Workshop.}\\
+  EAGE Near Surface Geoscience Young Professionals (NGYP), Lagos, Nigeria (Virtual). November 2021.
+
+  \item \textbf{Data Science and Machine Learning for Engineers.}\\
+  Society of Petroleum Engineers (SPE) NGYP, Lagos, Nigeria (Virtual). November 2021.
+
+  \item \textbf{Python Virtual Classroom.}\\
+  EAGE Near Surface Geoscience Young Professionals (NGYP), Lagos, Nigeria (Virtual). August 2020.
+
+\end{itemize}
+
+%% ===================================================================
+%% SOFTWARE AND TOOLS
+%% ===================================================================
+\section{Software and Open-Source Tools}
+
+\begin{itemize}
+
+  \item \textbf{submine} \hfill \href{https://github.com/instabaines/submine}{github.com/instabaines/submine}\\
+  A research-grade Python library for frequent subgraph mining with a unified interface over multiple mining backends and graph formats. Designed for reproducible research workflows.
+
+  \item \textbf{Temporal Eigenvector Centrality} \hfill \href{https://github.com/instabaines/temporal_eigen_vector_centrality}{github.com/instabaines/temporal\_eigen\_vector\_centrality}\\
+  A C++ implementation with Python bindings for centrality analysis on temporal and multiplex networks, built for large sparse network analysis.
+
+\end{itemize}
+
+%% ===================================================================
+%% AWARDS AND HONORS
+%% ===================================================================
+\section{Awards, Honors, and Sponsorships}
+
+\begin{itemize}
+  \item Linux Foundation PyTorch Conference Sponsorship \hfill 2025
+  \item AWS re:Invent Conference Sponsorship \hfill 2024
+  \item Acxiom Diversity Scholarship, University of Arkansas at Little Rock \hfill 2024
+\end{itemize}
+
+%% ===================================================================
+%% SKILLS
+%% ===================================================================
+\section{Technical Skills}
+
+\begin{itemize}[leftmargin=1.2em, itemsep=3pt]
+  \item \textbf{Machine Learning:} PyTorch, TensorFlow, Transformers, Retrieval-Augmented Generation (RAG), Agentic AI, Ranking Systems
+  \item \textbf{Data Science:} Python, SQL, Pandas, NumPy, Bayesian Models, Knowledge Graphs, Graph Neural Networks
+  \item \textbf{Engineering \& DevOps:} AWS, Docker, Kubernetes, Scalable ML Pipelines, Distributed Training
+  \item \textbf{NLP:} Information Extraction, Medical Coding Automation, Language Model Workflows, Entity Recognition
+\end{itemize}
+
+%% ===================================================================
+%% SERVICE
+%% ===================================================================
+\section{Certifications}
+
+\begin{itemize}
+  \item \textbf{Generative AI with Diffusion Models} --- NVIDIA \hfill April 2025
+  \item \textbf{Certified Machine Learning Engineer -- Associate} --- AWS \hfill November 2024
+  \item \textbf{Getting Started with Accelerated Computing in CUDA C/C++} --- NVIDIA \hfill November 2023
+\end{itemize}
+
+%% ===================================================================
+%% SERVICE
+%% ===================================================================
+\section{Professional Service}
+
+\begin{itemize}
+  \item \textbf{Peer Reviewer} --- 30 papers total (17 journal articles, 13 conference papers)
+  \begin{itemize}[topsep=2pt]
+    \item \textit{Journals (17):} Social Network Analysis and Mining, Springer; The Journal of Supercomputing, Springer; Humanities and Social Sciences Communications, Springer Nature; Journal of King Saud University --- Computer and Information Sciences, Elsevier; Scientific Reports, Nature; Applied Network Science, Springer; Telematics and Informatics, Elsevier; and others
+    \item \textit{Conferences (13):} ICIS 2026; AMCIS 2025; IEEE VR 2025; SAIS 2025; HAI 2024; Mensch und Computer 2024; ICWSM 2026; SBP-BRiMS 2025, 2026; HICSS 2027
+  \end{itemize}
+  \item Member, National Society of Black Engineers (NSBE)
+\end{itemize}
+
+\end{document}
