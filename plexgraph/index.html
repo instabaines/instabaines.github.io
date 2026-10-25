@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>plexgraph | Ridwan Amure</title>
+    <meta
+      name="description"
+      content="Overview and usage notes for plexgraph, a GPU-accelerated visualization library for multiplex, temporal, and hypergraph networks."
+    />
+    <link rel="icon" href="/images/favicon-32x32.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/assets/css/site.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="site-header">
+        <a class="brand" href="/">Ridwan Amure</a>
+        <nav class="site-nav" aria-label="Primary">
+          <a href="/about/">About</a>
+          <a href="/research/">Research</a>
+          <a href="/talks/">Talks</a>
+          <a href="/writing/">Notes</a>
+          <a class="is-active" href="/tools/">Tools</a>
+          <a href="/cv/">CV</a>
+        </nav>
+      </header>
+
+      <main>
+        <section class="page-hero">
+          <p class="eyebrow">Tool</p>
+          <h1>plexgraph</h1>
+          <p class="lead">
+            A GPU-accelerated graph visualization library built for complex network types, where multiplex,
+            temporal, and hypergraph networks are first-class rather than bolted onto a plain-graph model.
+          </p>
+          <div class="action-row">
+            <a class="button button-primary" href="https://plexgraph.readthedocs.io/" target="_blank" rel="noreferrer">Read the docs</a>
+            <a class="button button-secondary" href="https://github.com/instabaines/plexgraph" target="_blank" rel="noreferrer">Open on GitHub</a>
+          </div>
+        </section>
+
+        <section class="card-grid">
+          <article class="content-card">
+            <p class="card-kicker">Best for</p>
+            <h3>Exploring Complex Networks Visually</h3>
+            <p>Use <code>plexgraph</code> when your network has layers, time, or group interactions that a plain node-link view flattens away.</p>
+          </article>
+          <article class="content-card">
+            <p class="card-kicker">Stack</p>
+            <h3>Python + GPU Viewer</h3>
+            <p>Build graphs in Python and explore them in a browser tab or an inline Jupyter widget.</p>
+          </article>
+        </section>
+
+        <section class="section-grid">
+          <article class="panel">
+            <h2>What It Does</h2>
+            <p>
+              <code>plexgraph</code> treats plain, multiplex, temporal, and hypergraph networks as variations of one
+              underlying structure, so the same API and viewer work across all of them.
+            </p>
+            <ul class="feature-list compact-list">
+              <li>Directed edges, multiplex layers, temporal validity intervals, and hyperedges</li>
+              <li>GPU-accelerated interactive rendering</li>
+              <li>Styling encodings by degree, weight, attribute, or time</li>
+              <li>Export to PNG, JPG, SVG, HTML, and PDF</li>
+            </ul>
+          </article>
+
+          <article class="panel accent-panel">
+            <h2>Supported Inputs</h2>
+            <ul class="feature-list compact-list">
+              <li>Edge lists and temporal edge lists</li>
+              <li>pandas DataFrames</li>
+              <li>networkx graphs</li>
+              <li>GEXF and GraphML files</li>
+            </ul>
+          </article>
+        </section>
+
+        <section class="panel">
+          <h2>Installation</h2>
+          <pre><code>pip install plexgraph</code></pre>
+          <p>For the Jupyter notebook widget:</p>
+          <pre><code>pip install "plexgraph[jupyter]"</code></pre>
+          <p>To try a demo graph without writing any code:</p>
+          <pre><code>python -m plexgraph demo</code></pre>
+        </section>
+
+        <section class="section-grid">
+          <article class="panel">
+            <h2>Example Usage</h2>
+            <pre><code>import plexgraph as pg
+
+g = pg.Graph()
+g.add_node("alice")
+g.add_node("bob")
+g.add_edge("alice", "bob", weight=2.0)
+pg.show(g, node_color=pg.by_degree("plasma"))</code></pre>
+            <p><code>show()</code> opens a browser tab, or an inline widget inside a notebook.</p>
+          </article>
+
+          <article class="panel">
+            <h2>Beyond Plain Graphs</h2>
+            <pre><code>g.add_layer("friendship")
+g.add_edge("alice", "bob", layer="friendship")   # multiplex layer
+g.add_edge("alice", "bob", t_start=0, t_end=5)   # temporal interval
+g.add_hyperedge(["alice", "bob", "carol"])       # hyperedge</code></pre>
+          </article>
+        </section>
+
+        <section class="panel">
+          <h2>Interactive Viewer</h2>
+          <ul class="feature-list compact-list">
+            <li>Layer legend to toggle multiplex layers on and off</li>
+            <li>Timeline to scrub temporal graphs by moment, trailing window, or cumulative history</li>
+            <li>Flat, stacked-layer, and stacked-time views, plus a layer atlas and time ribbon</li>
+            <li>Filtering, neighbourhood focus, and path finding from the side panel</li>
+            <li>Density overview for views with more than 5,000 visible nodes</li>
+          </ul>
+        </section>
+
+        <section class="panel">
+          <h2>More Information</h2>
+          <div class="card-actions">
+            <a class="button button-secondary" href="https://plexgraph.readthedocs.io/" target="_blank" rel="noreferrer">Documentation</a>
+            <a class="button button-secondary" href="https://github.com/instabaines/plexgraph" target="_blank" rel="noreferrer">Repository</a>
+            <a class="button button-secondary" href="/tools/">Back to tools</a>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <div class="footer-bar">
+          <p class="footer-copy">Ridwan Amure | Applied AI, Social Computing, Recommendation Systems, Agents</p>
+          <div class="footer-links">
+            <a href="https://scholar.google.com/citations?user=pbfF8dQAAAAJ" target="_blank" rel="noreferrer">Google Scholar</a>
+            <a href="https://github.com/instabaines" target="_blank" rel="noreferrer">GitHub</a>
+            <a href="https://linkedin.com/in/ridwan-amure" target="_blank" rel="noreferrer">LinkedIn</a>
+            <a href="https://ridwanamure.substack.com/" target="_blank" rel="noreferrer">Substack</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script data-goatcounter="https://baines.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+  </body>
+</html>

@@ -16,6 +16,14 @@
   "experience": [
     {
       "company": "Meta",
+      "rolePeriod": "Part-time Student Researcher - August 2026 to Present",
+      "bullets": [
+        "Improving early-stage ranking (ESR) performance across all production metrics.",
+        "Developing target-aware attention methods, including hard inductive bias through ID matching and cross-attention between targets and user history."
+      ]
+    },
+    {
+      "company": "Meta",
       "rolePeriod": "Machine Learning Intern - 2026",
       "bullets": [
         "Improving the state-of-the-art early-stage ranking model for Product Ads.",
@@ -266,6 +274,24 @@
       ],
       "links": [
         { "label": "Repository", "url": "https://github.com/instabaines/temporal_eigen_vector_centrality" }
+      ]
+    },
+    {
+      "kicker": "Network Visualization",
+      "title": "plexgraph",
+      "summary": "A GPU-accelerated graph visualization library built for complex network types, treating multiplex, temporal, and hypergraph networks as first-class citizens.",
+      "highlights": [
+        "Unified model for plain, multiplex, temporal, and hypergraph networks",
+        "GPU-accelerated interactive viewer with notebook widget support",
+        "Loaders for networkx, pandas, and GEXF/GraphML"
+      ],
+      "actions": [
+        { "label": "View docs", "url": "plexgraph/", "primary": true },
+        { "label": "Full documentation", "url": "https://plexgraph.readthedocs.io/", "primary": false },
+        { "label": "Open on GitHub", "url": "https://github.com/instabaines/plexgraph", "primary": false }
+      ],
+      "links": [
+        { "label": "Repository", "url": "https://github.com/instabaines/plexgraph" }
       ]
     }
   ]
